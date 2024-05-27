@@ -17,12 +17,17 @@
     "commit": "git-cz"
   },
   "dependencies": {
+    "@react-three/drei": "^9.105.6",
+    "@react-three/fiber": "^8.16.6",
+    "@react-three/postprocessing": "^2.16.2",
     "@types/styled-components": "^5.1.34",
+    "@types/three": "^0.164.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.11",
+    "three": "^0.164.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
