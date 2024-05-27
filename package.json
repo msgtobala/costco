@@ -13,7 +13,8 @@
     "lint-css:fix": "npm run lint:css -- --fix",
     "lint:fix": "npm run lint-ts:fix && npm run lint-css:fix",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky",
+    "commit": "git-cz"
   },
   "dependencies": {
     "@types/styled-components": "^5.1.34",
