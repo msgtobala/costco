@@ -6,7 +6,7 @@ import 'src/App.css';
 import { ARButton, XR } from '@react-three/xr';
 import MainThreeXR from './components/three/MainThreeXR';
 
-const App: React.FC = () => {
+const AppHit: React.FC = () => {
   return (
     <>
       <ARButton sessionInit={{ requiredFeatures: ['hit-test'] }} />
@@ -19,4 +19,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default AppHit;
