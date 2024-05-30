@@ -1,22 +1,9 @@
 import React from 'react';
 
-import { Canvas } from '@react-three/fiber';
-
-import 'src/App.css';
-import { ARButton, XR } from '@react-three/xr';
-import MainThreeXR from './components/three/MainThreeXR';
+import ARCanvas from 'src/components/three/ARCanvas/ARCanvas';
 
 const App: React.FC = () => {
-  return (
-    <>
-      <ARButton sessionInit={{ requiredFeatures: ['hit-test'] }} />
-      <Canvas>
-        <XR>
-          <MainThreeXR />
-        </XR>
-      </Canvas>
-    </>
-  );
+  return <ARCanvas />;
 };
 
 export default App;

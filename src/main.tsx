@@ -1,14 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import App from 'src/App';
 import 'src/index.css';
-import AppHit from './AppHit';
-import AppModel from './AppModel';
-import AppAnimation from './AppAnimation';
+import App from 'src/App';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <AppAnimation />
+    <App />
   </React.StrictMode>,
 );

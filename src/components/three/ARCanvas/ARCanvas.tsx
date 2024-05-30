@@ -2,17 +2,16 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { ARButton, XR } from '@react-three/xr';
 import { Canvas } from '@react-three/fiber';
-import MainThreeModal from './components/three/MainThreeModal';
-import 'src/App.css';
-import CharacterProvider from './context/CharacterAnimation';
-import Interface from './components/three/Interface';
 
-const AppAnimation: React.FC = (): JSX.Element => {
+import ARScene from 'src/components/three/ARCanvas/ARScene';
+import AppProvider from 'src/context/AppProvider';
+import ARControls from 'src/components/ui/ARControls/ARControls';
+
+const ARCanvas: React.FC = (): JSX.Element => {
   const overlayContent = useRef<any>(null);
   const [content, setContent] = useState<any>(null);
 
   useEffect(() => {
-    // console.log(document.querySelector('#overlay-content') as HTMLElement);
     if (overlayContent.current) {
       setContent(overlayContent.current);
     }
@@ -20,13 +19,12 @@ const AppAnimation: React.FC = (): JSX.Element => {
 
   return (
     <>
-      <CharacterProvider>
+      <AppProvider>
         <ARButton
           sessionInit={{
             requiredFeatures: ['hit-test'],
             optionalFeatures: ['dom-overlay'],
             domOverlay: {
-              //   root: overlayContent.current as HTMLElement,
               root: content as HTMLElement,
             },
           }}
@@ -34,13 +32,13 @@ const AppAnimation: React.FC = (): JSX.Element => {
         />
         <Canvas>
           <XR>
-            <MainThreeModal />
+            <ARScene />
           </XR>
         </Canvas>
-        <Interface overlayContentRef={overlayContent} />
-      </CharacterProvider>
+        <ARControls overlayContentRef={overlayContent} />
+      </AppProvider>
     </>
   );
 };
 
-export default AppAnimation;
+export default ARCanvas;
