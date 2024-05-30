@@ -1,14 +1,9 @@
-import './App.css';
-import { ProductPage } from './pages/ProductPage';
-import Router from './routes/Router';
+import React from 'react';
 
-function App() {
-  return (
-    <>
-      {/* <ProductPage /> */}
-      <Router />
-    </>
-  );
-}
+import ARCanvas from 'src/components/three/ARCanvas/ARCanvas';
+
+const App: React.FC = () => {
+  return <ARCanvas />;
+};
 
 export default App;

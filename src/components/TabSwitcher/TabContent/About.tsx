@@ -3,7 +3,7 @@ import {
   Title,
   Wrapper,
   ContentWrapper,
-} from "./TabContent.styled";
+} from './TabContent.styled';
 
 export const About = () => (
   <Wrapper>
