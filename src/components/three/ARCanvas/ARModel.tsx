@@ -40,7 +40,15 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
   useEffect(() => {
     if (animationIndex !== null) {
       const action = actions[names[animationIndex]] as AnimationAction;
-      action.reset().fadeIn(0.5).play().loop = LoopOnce;
+      action.reset();
+      if (animationIndex === 0) {
+        action.fadeIn(0.5).play().setLoop(LoopOnce, 1);
+      }
+
+      if (animationIndex === 1) {
+        action.fadeIn(0.5).play().halt(2.5).setLoop(LoopOnce, 1);
+      }
+
       return () => {
         // setAnimationIndex(null);
         action.fadeOut(0.5);

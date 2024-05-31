@@ -12,8 +12,14 @@ export const TabContentWrapper = styled.div<{ noBorder?: boolean }>`
   > div {
     border-right: 0.4px dotted #0079d5;
   }
+
+  > div:nth-child(2) {
+    margin-left: 20px;
+  }
+
   :last-child {
     border: none;
+    margin-inline-end: 0;
   }
 
   ${({ noBorder }) =>
