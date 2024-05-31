@@ -1,30 +1,38 @@
 import React, { useRef, useState } from 'react';
 
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
-import { Matrix4, Vector3 } from 'three';
+import {
+  Matrix4,
+  Vector3,
+  PerspectiveCamera as PerspectiveCameraImpl,
+  Mesh,
+} from 'three';
 import {
   Interactive,
   useHitTest,
   useXR,
   XRInteractionEvent,
 } from '@react-three/xr';
+import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 
 import ARModel from 'src/components/three/ARCanvas/ARModel';
 
 const ARScene: React.FC = (): JSX.Element => {
   const [modelPosition, setModelPosition] = useState<Vector3 | null>(null);
-  const reticleRef = useRef<any>();
-  const orbitRef = useRef<any>();
-  const cameraRef = useRef<any>();
+  const reticleRef = useRef<Mesh>(null);
+  const orbitRef = useRef<OrbitControlsImpl>(null);
+  const cameraRef = useRef<PerspectiveCameraImpl>(null);
   const { isPresenting } = useXR();
 
-  useHitTest((hitMatrix: Matrix4, _hit: XRHitTestResult) => {
-    hitMatrix.decompose(
-      reticleRef.current.position,
-      reticleRef.current.quaternion,
-      reticleRef.current.scale,
-    );
-    reticleRef.current.rotation.set(-Math.PI / 2, 0, 0);
+  useHitTest((hitMatrix: Matrix4) => {
+    if (reticleRef.current) {
+      hitMatrix.decompose(
+        reticleRef.current.position,
+        reticleRef.current.quaternion,
+        reticleRef.current.scale,
+      );
+      reticleRef.current.rotation.set(-Math.PI / 2, 0, 0);
+    }
   });
 
   const placeModel = (e: XRInteractionEvent) => {

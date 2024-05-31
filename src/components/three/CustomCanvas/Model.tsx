@@ -1,53 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 
-import { useGLTF, useAnimations } from '@react-three/drei';
-import {
-  Vector3,
-  MeshStandardMaterial,
-  AnimationAction,
-  LoopOnce,
-  Group,
-  Mesh,
-} from 'three';
-import { type GLTF } from 'three-stdlib';
-import { type ObjectMap } from '@react-three/fiber';
+import { useGLTF } from '@react-three/drei';
+import { Group } from 'three';
 
-import { useAppContext } from 'src/context/AppProvider';
+import GLTFResult from 'src/models/components/three/CustomCanvas/Model.type';
 
-// TODO: Move Types to model
-type GLTFResult = GLTF &
-  ObjectMap & {
-    nodes: {
-      [x: string]: Mesh;
-    };
-    materials: {
-      color_main: MeshStandardMaterial;
-    };
-  };
-
-const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
+const Model: React.FC = (props): JSX.Element => {
   const group = useRef<Group>(null);
-  const { nodes, materials, animations } = useGLTF(
+  const { nodes, materials } = useGLTF(
     'https://kmulehampttbgpnlsmgh.supabase.co/storage/v1/object/public/costco-models/fridge_animated_v4.glb?t=2024-05-31T09%3A15%3A02.985Z',
   ) as GLTFResult;
-  const { actions, names } = useAnimations(animations, group);
-  const { animationIndex, setAnimations } = useAppContext();
-
-  useEffect(() => {
-    setAnimations(names);
-  }, []);
-
-  useEffect(() => {
-    if (animationIndex !== null) {
-      const action = actions[names[animationIndex]] as AnimationAction;
-      action.reset().fadeIn(0.5).play().loop = LoopOnce;
-      return () => {
-        // setAnimationIndex(null);
-        action.fadeOut(0.5);
-      };
-    }
-    return () => {};
-  }, [animationIndex]);
 
   return (
     <group ref={group} {...props} dispose={null}>
@@ -285,14 +247,8 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
   );
 };
 
-// TODO(Balaji): Load this url from a config
 useGLTF.preload(
   'https://kmulehampttbgpnlsmgh.supabase.co/storage/v1/object/public/costco-models/fridge_animated_v4.glb?t=2024-05-31T09%3A15%3A02.985Z',
 );
 
-ARModel.defaultProps = {
-  position: new Vector3(0, 0, 0),
-  scale: 1,
-};
-
-export default ARModel;
+export default Model;

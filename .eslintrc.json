@@ -63,6 +63,7 @@
         "html": "ignore"
       }
     ],
-    "no-console": "error"
+    "no-console": "error",
+    "react/no-unknown-property": "off"
   }
 }

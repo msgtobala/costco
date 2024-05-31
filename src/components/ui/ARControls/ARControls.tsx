@@ -1,5 +1,6 @@
 import React from 'react';
 
+import IARControlsProps from 'src/models/components/ui/ARControls/ARControls.type';
 import { useAppContext } from 'src/context/AppProvider';
 import {
   DOMContainer,
@@ -7,10 +8,7 @@ import {
   ButtonContainer,
 } from 'src/components/ui/ARControls/ARControls.style';
 
-// TODO(Balaji): Add Types and remove any
-const ARControls: React.FC<{ overlayContentRef: any }> = (
-  props,
-): JSX.Element => {
+const ARControls: React.FC<IARControlsProps> = (props): JSX.Element => {
   const { animations, setAnimationIndex } = useAppContext();
   const { overlayContentRef } = props;
 
@@ -25,6 +23,7 @@ const ARControls: React.FC<{ overlayContentRef: any }> = (
           {animations.map((name: string, index: number) => {
             return (
               <button
+                type="button"
                 key={name}
                 onClick={() => {
                   onButtonClicked(index);

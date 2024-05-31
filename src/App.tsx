@@ -1,9 +1,14 @@
 import React from 'react';
 
-import ARCanvas from 'src/components/three/ARCanvas/ARCanvas';
+import AppProvider from 'src/context/AppProvider';
+import Router from 'src/routes/Router';
 
 const App: React.FC = () => {
-  return <ARCanvas />;
+  return (
+    <AppProvider>
+      <Router />
+    </AppProvider>
+  );
 };
 
 export default App;

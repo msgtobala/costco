@@ -1,18 +1,23 @@
+import React from 'react';
+
+import Home from 'src/pages/Home/Home';
 import { RouteObject } from 'react-router-dom';
+import AR from 'src/pages/AR/AR';
+import Recommendation from 'src/pages/Recommendation/Recommendation';
 
 const getRouteConfig = (): Array<RouteObject> => {
   return [
     {
       index: true,
-      element: <p>Hai</p>,
+      element: (<Home />) as React.ReactElement,
     },
     {
       path: '/ar',
-      element: <p>AR</p>,
+      element: (<AR />) as React.ReactElement,
     },
     {
       path: '/recommendation',
-      element: <p>Recommendation</p>,
+      element: (<Recommendation />) as React.ReactElement,
     },
   ];
 };

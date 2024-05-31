@@ -1,21 +1,27 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useMemo, useState } from 'react';
 
-const AppContext = createContext({} as any);
+import AppProviderType, {
+  IAppProviderProps,
+} from 'src/models/context/AppProvider.type';
+
+const AppContext = createContext({} as AppProviderType);
 
 export const useAppContext = () => useContext(AppContext);
 
-// TODO(Balaji): Add Types
-const AppProvider: React.FC<{ children: React.ReactNode }> = ({
+const AppProvider: React.FC<IAppProviderProps> = ({
   children,
 }): JSX.Element => {
   const [animations, setAnimations] = useState<string[]>([]);
   const [animationIndex, setAnimationIndex] = useState<number | null>(null);
-  const value = {
-    animations,
-    animationIndex,
-    setAnimations,
-    setAnimationIndex,
-  } as any;
+
+  const value = useMemo(() => {
+    return {
+      animations,
+      animationIndex,
+      setAnimations,
+      setAnimationIndex,
+    } as AppProviderType;
+  }, [animations, animationIndex]);
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };

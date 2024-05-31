@@ -4,12 +4,11 @@ import { ARButton, XR } from '@react-three/xr';
 import { Canvas } from '@react-three/fiber';
 
 import ARScene from 'src/components/three/ARCanvas/ARScene';
-import AppProvider from 'src/context/AppProvider';
 import ARControls from 'src/components/ui/ARControls/ARControls';
 
 const ARCanvas: React.FC = (): JSX.Element => {
-  const overlayContent = useRef<any>(null);
-  const [content, setContent] = useState<any>(null);
+  const overlayContent = useRef<HTMLDivElement>(null);
+  const [content, setContent] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
     if (overlayContent.current) {
@@ -19,24 +18,22 @@ const ARCanvas: React.FC = (): JSX.Element => {
 
   return (
     <>
-      <AppProvider>
-        <ARButton
-          sessionInit={{
-            requiredFeatures: ['hit-test'],
-            optionalFeatures: ['dom-overlay'],
-            domOverlay: {
-              root: content as HTMLElement,
-            },
-          }}
-          className="ar-button"
-        />
-        <Canvas>
-          <XR>
-            <ARScene />
-          </XR>
-        </Canvas>
-        <ARControls overlayContentRef={overlayContent} />
-      </AppProvider>
+      <ARButton
+        sessionInit={{
+          requiredFeatures: ['hit-test'],
+          optionalFeatures: ['dom-overlay'],
+          domOverlay: {
+            root: content as HTMLElement,
+          },
+        }}
+        className="ar-button"
+      />
+      <Canvas style={{ width: '100%', height: '100vh' }}>
+        <XR>
+          <ARScene />
+        </XR>
+      </Canvas>
+      <ARControls overlayContentRef={overlayContent} />
     </>
   );
 };
