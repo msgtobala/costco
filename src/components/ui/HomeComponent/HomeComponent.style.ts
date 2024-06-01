@@ -5,7 +5,17 @@ export const HomeComponentWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  background-color: lightcyan;
+  background: rgb(191, 196, 203);
+  background: linear-gradient(
+    180deg,
+    rgba(191, 196, 203, 1) 0%,
+    rgba(195, 200, 207, 1) 3%,
+    rgba(201, 206, 214, 1) 9%,
+    rgba(161, 168, 177, 1) 29%,
+    rgba(168, 173, 183, 1) 54%,
+    rgba(184, 190, 199, 1) 55%,
+    rgba(190, 196, 207, 1) 100%
+  );
   overflow: hidden;
   width: 100%;
   height: 100vh;

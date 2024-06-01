@@ -6,7 +6,7 @@ import Scene from 'src/components/three/CustomCanvas/Scene';
 
 const CustomCanvas: React.FC = (): JSX.Element => {
   return (
-    <Canvas frameloop="demand">
+    <Canvas frameloop="demand" shadows>
       <Scene />
     </Canvas>
   );

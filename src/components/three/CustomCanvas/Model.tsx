@@ -1,15 +1,30 @@
-import React, { useRef } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-param-reassign */
+import React, { useEffect, useRef } from 'react';
 
 import { useGLTF } from '@react-three/drei';
-import { Group } from 'three';
+import { Group, Mesh } from 'three';
 
 import GLTFResult from 'src/models/components/three/CustomCanvas/Model.type';
 
 const Model: React.FC = (props): JSX.Element => {
   const group = useRef<Group>(null);
-  const { nodes, materials } = useGLTF(
+  const { nodes, materials, scene } = useGLTF(
     'https://kmulehampttbgpnlsmgh.supabase.co/storage/v1/object/public/costco-models/fridge_animated_v4.glb?t=2024-05-31T09%3A15%3A02.985Z',
   ) as GLTFResult;
+
+  useEffect(() => {
+    const cube12 = scene.getObjectByName('Cube012');
+    cube12?.children.forEach((child: any) => {
+      child.material.roughness = 0;
+    });
+    scene.traverse((object) => {
+      if ((object as Mesh).isMesh) {
+        object.castShadow = true;
+        object.receiveShadow = true;
+      }
+    });
+  }, []);
 
   return (
     <group ref={group} {...props} dispose={null}>

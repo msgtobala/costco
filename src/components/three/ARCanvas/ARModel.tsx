@@ -41,6 +41,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
     if (animationIndex !== null) {
       const action = actions[names[animationIndex]] as AnimationAction;
       action.reset();
+      action.stop();
       if (animationIndex === 0) {
         action.fadeIn(0.5).play().setLoop(LoopOnce, 1);
       }

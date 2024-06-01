@@ -9,11 +9,13 @@ import {
   CanvasWrapper,
   HomeComponentWrapper,
 } from 'src/components/ui/HomeComponent/HomeComponent.style';
+import SplashLoader from 'src/components/ui/SplashLoader/SplashLoader';
 
 const HomeComponent: React.FC = (): JSX.Element => {
   return (
     <HomeComponentWrapper>
       <Header />
+      <SplashLoader />
       <CanvasWrapper>
         <CustomCanvas />
       </CanvasWrapper>

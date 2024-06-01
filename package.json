@@ -23,12 +23,13 @@
     "@react-three/xr": "^5.7.1",
     "@types/styled-components": "^5.1.34",
     "@types/three": "^0.164.1",
-    "three": "^0.164.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.11",
+    "three": "^0.164.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
