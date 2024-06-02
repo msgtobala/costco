@@ -13,6 +13,7 @@ import { type GLTF } from 'three-stdlib';
 import { type ObjectMap } from '@react-three/fiber';
 
 import { useAppContext } from 'src/context/AppProvider';
+import { useXR } from '@react-three/xr';
 
 // TODO: Move Types to model
 type GLTFResult = GLTF &
@@ -32,6 +33,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
   ) as GLTFResult;
   const { actions, names } = useAnimations(animations, group);
   const { animationIndex, setAnimations } = useAppContext();
+  const { isPresenting } = useXR();
 
   useEffect(() => {
     setAnimations(names);
@@ -39,8 +41,8 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
 
   useEffect(() => {
     const cube12 = scene.getObjectByName('Cube012');
-    const cube12_4 = scene.getObjectByName('Cube012_4');
-    const cube12_1 = scene.getObjectByName('Cube012_1');
+    // const cube12_4 = scene.getObjectByName('Cube012_4');
+    // const cube12_1 = scene.getObjectByName('Cube012_1');
     // if (cube12_4) {
     //   (cube12_4 as any).material.roughness = 0.8;
     //   (cube12_4 as any).material.color = new Color(0xc6c1c2);
@@ -85,7 +87,12 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
   }, [animationIndex]);
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group
+      ref={group}
+      {...props}
+      dispose={null}
+      scale={isPresenting ? [0.2, 0.2, 0.2] : [1, 1, 1]}
+    >
       <group name="Scene">
         <group
           name="Cube001"

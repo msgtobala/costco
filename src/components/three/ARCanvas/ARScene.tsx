@@ -1,11 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-import { Html, OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import {
   Matrix4,
   Vector3,
   PerspectiveCamera as PerspectiveCameraImpl,
   Mesh,
+  Color,
 } from 'three';
 import {
   Interactive,
@@ -17,13 +18,19 @@ import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 
 import ARModel from 'src/components/three/ARCanvas/ARModel';
 import CustomEnvironment from 'src/components/three/Environment';
+import { useAppContext } from 'src/context/AppProvider';
 
 const ARScene: React.FC = (): JSX.Element => {
   const [modelPosition, setModelPosition] = useState<Vector3 | null>(null);
   const reticleRef = useRef<Mesh>(null);
   const orbitRef = useRef<OrbitControlsImpl>(null);
   const cameraRef = useRef<PerspectiveCameraImpl>(null);
+  const { setARMode } = useAppContext();
   const { isPresenting } = useXR();
+
+  useEffect(() => {
+    setARMode(isPresenting);
+  }, [isPresenting]);
 
   useHitTest((hitMatrix: Matrix4) => {
     if (reticleRef.current) {
@@ -69,6 +76,7 @@ const ARScene: React.FC = (): JSX.Element => {
       <PerspectiveCamera
         ref={cameraRef}
         makeDefault
+        // position={[-6.81, 6.06, 10.86]}
         position={[-6.76, 3.53, 11.47]}
       />
     </>

@@ -14,11 +14,16 @@ import Model from 'src/components/three/CustomCanvas/Model';
 import environment from 'src/resources/environment';
 import { useAppContext } from 'src/context/AppProvider';
 import CustomEnvironment from 'src/components/three/Environment';
+import useHotSpot from 'src/hooks/useHotspot';
+import { useThree } from '@react-three/fiber';
 
 const Scene: React.FC = (): JSX.Element => {
   const orbitRef = useRef<OrbitControlsImpl>(null);
   const cameraRef = useRef<PerspectiveCameraImpl>(null);
   const { selectedEnvironment } = useAppContext();
+  const { camera } = useThree();
+
+  useHotSpot(cameraRef, orbitRef, camera);
 
   return (
     <>

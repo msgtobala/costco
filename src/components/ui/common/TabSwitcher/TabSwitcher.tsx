@@ -6,9 +6,11 @@ import {
   TabSwitcherStyled,
   TabStyled,
 } from 'src/components/ui/common/TabSwitcher/TabSwitcher.styled';
+import { useAppContext } from 'src/context/AppProvider';
 
 const TabSwitcher: React.FC = (): JSX.Element => {
   const [selectedTab, setSelectedTab] = useState('about');
+  const { setExitView } = useAppContext();
 
   const getTabContent = () => {
     switch (selectedTab) {
@@ -25,13 +27,19 @@ const TabSwitcher: React.FC = (): JSX.Element => {
     <>
       <TabSwitcherStyled>
         <TabStyled
-          onClick={() => setSelectedTab('about')}
+          onClick={() => {
+            setExitView(true);
+            setSelectedTab('about');
+          }}
           $isActive={selectedTab === 'about'}
         >
           <span>ABOUT</span>
         </TabStyled>
         <TabStyled
-          onClick={() => setSelectedTab('features')}
+          onClick={() => {
+            setExitView(false);
+            setSelectedTab('features');
+          }}
           $isActive={selectedTab === 'features'}
         >
           <span>FEATURES</span>

@@ -4,26 +4,21 @@ import { ARButton, XR } from '@react-three/xr';
 import { Canvas } from '@react-three/fiber';
 
 import ARScene from 'src/components/three/ARCanvas/ARScene';
-import ARControls from 'src/components/ui/ARControls/ARControls';
-import BottomPanel from 'src/components/ui/common/BottomPanel/BottomPanel';
 import { useAppContext } from 'src/context/AppProvider';
+import BottomPanelAR from 'src/components/ui/common/BottomPanelAR/BottomPanelAR';
 // import BottomPanel from 'src/components/ui/common/BottomPanel/BottomPanel';
 
 const ARCanvas: React.FC = (): JSX.Element => {
   const overlayContent = useRef<HTMLDivElement>(null);
   const [content, setContent] = useState<HTMLElement | null>(null);
-  const { arMode, setARMode } = useAppContext();
+  const { arMode } = useAppContext();
 
   useEffect(() => {
-    if (overlayContent.current && arMode) {
+    if (overlayContent.current) {
       setContent(overlayContent.current);
     }
-  }, [arMode]);
+  }, []);
 
-  const enableARMode = () => {
-    setARMode(true);
-  };
- 
   return (
     <>
       <ARButton
@@ -37,13 +32,15 @@ const ARCanvas: React.FC = (): JSX.Element => {
         // onClick={enableARMode}
         className="ar-button"
       />
-      <Canvas style={{ width: '100%', height: '100vh' }}>
-        <XR>
-          <ARScene />
-        </XR>
-      </Canvas>
-      <div style={{ visibility: 'hidden' }}>
-        <ARControls overlayContentRef={overlayContent} />
+      <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
+        <Canvas style={{ width: '100%', height: '100vh' }}>
+          <XR>
+            <ARScene />
+          </XR>
+        </Canvas>
+      </div>
+      <div style={{ visibility: arMode ? 'visible' : 'hidden' }}>
+        <BottomPanelAR overlayContentRef={overlayContent} />
       </div>
       {/* {arMode ? <BottomPanel overlayContentRef={overlayContent} /> : <p>Hai</p>} */}
     </>

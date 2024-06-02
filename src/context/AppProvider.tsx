@@ -17,6 +17,9 @@ const AppProvider: React.FC<IAppProviderProps> = ({
     null,
   );
   const [arMode, setARMode] = useState<boolean>(false);
+  const [selectedFeature, setSelectedFeature] = useState<number | null>(null);
+  const [selectedHotSpot, setSelectedHotSpot] = useState<number | null>(null);
+  const [exitView, setExitView] = useState<boolean>(false);
 
   const value = useMemo(() => {
     return {
@@ -24,12 +27,26 @@ const AppProvider: React.FC<IAppProviderProps> = ({
       animationIndex,
       selectedEnvironment,
       arMode,
+      selectedFeature,
+      selectedHotSpot,
+      exitView,
       setAnimations,
       setAnimationIndex,
       setSelectedEnvironment,
       setARMode,
+      setSelectedFeature,
+      setSelectedHotSpot,
+      setExitView,
     } as AppProviderType;
-  }, [animations, animationIndex, selectedEnvironment, arMode]);
+  }, [
+    animations,
+    animationIndex,
+    selectedEnvironment,
+    arMode,
+    selectedFeature,
+    selectedHotSpot,
+    exitView,
+  ]);
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };

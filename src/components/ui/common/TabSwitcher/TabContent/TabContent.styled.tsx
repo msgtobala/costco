@@ -1,6 +1,8 @@
 import { css, styled } from 'styled-components';
 
 export const TabContentWrapper = styled.div<{ $noBorder?: boolean }>`
+  position: relative;
+  z-index: -1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,7 +10,7 @@ export const TabContentWrapper = styled.div<{ $noBorder?: boolean }>`
   border: 1px solid #fff;
   border-radius: 8px 8px 0 0;
   background-color: #fff;
-  padding: 20px 20px;
+  padding: 12px 14px;
   > div {
     border-right: 0.4px dotted #0079d5;
   }
