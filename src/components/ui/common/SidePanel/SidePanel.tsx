@@ -47,6 +47,10 @@ const SidePanel: React.FC = (): JSX.Element => {
   const onSelectIcon = (iconName: string) => {
     setSelectedIcon(iconName);
     setSelectedEnvironment(null);
+    if (selectedIcon === iconName) {
+      setSelectedIcon(null);
+      return;
+    }
     if (iconName === 'Paint') {
       setSelectedOption(0);
       return;
