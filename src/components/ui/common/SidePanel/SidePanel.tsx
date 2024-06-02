@@ -17,7 +17,7 @@ const icons = [
   {
     name: 'Paint',
     src: images.common.Paint,
-    color: ['#000000', '#736C68'],
+    color: ['#736C68', '#000000'],
   },
   {
     name: 'Environment',
