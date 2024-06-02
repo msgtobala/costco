@@ -6,12 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint:ts": "eslint \"src/**/*.{ts,tsx}\"",
-    "lint:css": "stylelint \"src/**/*.style.ts\"",
-    "lint": "npm run lint:ts",
-    "lint-ts:fix": "npm run lint:ts -- --fix",
-    "lint-css:fix": "npm run lint:css -- --fix",
-    "lint:fix": "npm run lint-ts:fix && npm run lint-css:fix",
     "preview": "vite preview",
     "prepare": "husky",
     "commit": "git-cz"
