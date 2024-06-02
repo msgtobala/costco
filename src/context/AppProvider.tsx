@@ -16,17 +16,20 @@ const AppProvider: React.FC<IAppProviderProps> = ({
   const [selectedEnvironment, setSelectedEnvironment] = useState<number | null>(
     null,
   );
+  const [arMode, setARMode] = useState<boolean>(false);
 
   const value = useMemo(() => {
     return {
       animations,
       animationIndex,
       selectedEnvironment,
+      arMode,
       setAnimations,
       setAnimationIndex,
       setSelectedEnvironment,
+      setARMode,
     } as AppProviderType;
-  }, [animations, animationIndex, selectedEnvironment]);
+  }, [animations, animationIndex, selectedEnvironment, arMode]);
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };

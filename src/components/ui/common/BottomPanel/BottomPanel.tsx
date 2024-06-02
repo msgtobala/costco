@@ -8,6 +8,7 @@ const BottomPanel: React.FC<{ overlayContentRef?: any }> = (
   props,
 ): JSX.Element => {
   const { overlayContentRef } = props;
+
   return (
     <BottomPanelWrapper $showPanels ref={overlayContentRef}>
       <TabSwitcher />

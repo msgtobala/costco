@@ -11,6 +11,7 @@ import {
   OptionsPanelImage,
 } from 'src/components/ui/common/SidePanel/SidePanel.style';
 import { useAppContext } from 'src/context/AppProvider';
+import { useNavigate } from 'react-router-dom';
 
 const icons = [
   {
@@ -41,6 +42,7 @@ const SidePanel: React.FC = (): JSX.Element => {
   const [selectedIcon, setSelectedIcon] = useState<string | null>(null);
   const [selectedOption, setSelectedOption] = useState<number | null>(0);
   const { setSelectedEnvironment } = useAppContext();
+  const navigate = useNavigate();
 
   const onSelectIcon = (iconName: string) => {
     setSelectedIcon(iconName);
@@ -49,7 +51,11 @@ const SidePanel: React.FC = (): JSX.Element => {
       setSelectedOption(0);
       return;
     }
+
     setSelectedOption(null);
+    if (iconName === 'AR') {
+      navigate('/ar');
+    }
   };
 
   const onSelectOption = (optionIndex: number) => {
