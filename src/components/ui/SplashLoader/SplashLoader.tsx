@@ -17,7 +17,7 @@ const SplashLoader: React.FC = (): JSX.Element => {
       <SplashLoaderWrapper>
         <CircularProgressbar
           value={progress}
-          text={`${progress}%`}
+          text={`${progress.toFixed(0)}%`}
           strokeWidth={2}
           styles={buildStyles({
             rotation: 0.25,

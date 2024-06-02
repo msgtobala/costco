@@ -27,7 +27,7 @@ type GLTFResult = GLTF &
 
 const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
   const group = useRef<Group>(null);
-  const { nodes, materials, animations } = useGLTF(
+  const { nodes, materials, animations, scene } = useGLTF(
     'https://kmulehampttbgpnlsmgh.supabase.co/storage/v1/object/public/costco-models/fridge_animated_v4.glb?t=2024-05-31T09%3A15%3A02.985Z',
   ) as GLTFResult;
   const { actions, names } = useAnimations(animations, group);
@@ -35,6 +35,32 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
 
   useEffect(() => {
     setAnimations(names);
+  }, []);
+
+  useEffect(() => {
+    const cube12 = scene.getObjectByName('Cube012');
+    const cube12_4 = scene.getObjectByName('Cube012_4');
+    const cube12_1 = scene.getObjectByName('Cube012_1');
+    // if (cube12_4) {
+    //   (cube12_4 as any).material.roughness = 0.8;
+    //   (cube12_4 as any).material.color = new Color(0xc6c1c2);
+    // }
+
+    // if (cube12_1) {
+    //   (cube12_1 as any).material.roughness = 0.4;
+    //   (cube12_1 as any).material.metalness = 0.7;
+    //   (cube12_1 as any).material.color = new Color(0x808084);
+    // }
+    cube12?.children.forEach((child: any) => {
+      child.material.roughness = 0.6;
+      // child.material.metalness = 0.5;
+    });
+    scene.traverse((object) => {
+      if ((object as Mesh).isMesh) {
+        object.castShadow = true;
+        object.receiveShadow = true;
+      }
+    });
   }, []);
 
   useEffect(() => {

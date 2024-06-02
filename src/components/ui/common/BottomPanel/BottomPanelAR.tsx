@@ -4,7 +4,7 @@ import TabSwitcher from 'src/components/ui/common/TabSwitcher/TabSwitcher';
 import Cart from 'src/components/ui/common/Cart/Cart';
 import { BottomPanelWrapper } from 'src/components/ui/common/BottomPanel/BottomPanel.style';
 
-const BottomPanel: React.FC<{ overlayContentRef?: any }> = (
+const BottomPanelAR: React.FC<{ overlayContentRef?: any }> = (
   props,
 ): JSX.Element => {
   const { overlayContentRef } = props;
@@ -16,4 +16,4 @@ const BottomPanel: React.FC<{ overlayContentRef?: any }> = (
   );
 };
 
-export default BottomPanel;
+export default BottomPanelAR;

@@ -13,15 +13,20 @@ const AppProvider: React.FC<IAppProviderProps> = ({
 }): JSX.Element => {
   const [animations, setAnimations] = useState<string[]>([]);
   const [animationIndex, setAnimationIndex] = useState<number | null>(null);
+  const [selectedEnvironment, setSelectedEnvironment] = useState<number | null>(
+    null,
+  );
 
   const value = useMemo(() => {
     return {
       animations,
       animationIndex,
+      selectedEnvironment,
       setAnimations,
       setAnimationIndex,
+      setSelectedEnvironment,
     } as AppProviderType;
-  }, [animations, animationIndex]);
+  }, [animations, animationIndex, selectedEnvironment]);
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };

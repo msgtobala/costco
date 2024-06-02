@@ -18,13 +18,16 @@ const footerSlideOut = keyframes`
   }
 `;
 
-const BottomPanelWrapper = styled.div<{ $showPanels: boolean }>`
+export const BottomPanelWrapper = styled.div<{ $showPanels: boolean }>`
   position: absolute;
   bottom: 0;
   width: 100%;
   transform: translateY(100%);
   animation: ${(props) => (props.$showPanels ? footerSlideIn : footerSlideOut)}
     1s ease-in-out forwards;
+  animation-delay: 1s;
 `;
 
-export default BottomPanelWrapper;
+export const PanelWrapper = styled.div`
+  background-color: white;
+`;

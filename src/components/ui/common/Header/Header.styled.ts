@@ -21,6 +21,7 @@ export const HeaderWrapper = styled.div`
   width: 100%;
   padding: 20px;
   animation: ${slideInTop} 1s ease-in-out;
+  animation-delay: 1s;
 `;
 
 export const HeaderButton = styled.button`

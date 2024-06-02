@@ -1,6 +1,6 @@
 import { css, styled } from 'styled-components';
 
-export const TabContentWrapper = styled.div<{ noBorder?: boolean }>`
+export const TabContentWrapper = styled.div<{ $noBorder?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,8 +22,8 @@ export const TabContentWrapper = styled.div<{ noBorder?: boolean }>`
     margin-inline-end: 0;
   }
 
-  ${({ noBorder }) =>
-    noBorder &&
+  ${({ $noBorder }) =>
+    $noBorder &&
     css`
       > div {
         border: none;

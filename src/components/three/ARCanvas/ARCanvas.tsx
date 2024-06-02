@@ -5,6 +5,8 @@ import { Canvas } from '@react-three/fiber';
 
 import ARScene from 'src/components/three/ARCanvas/ARScene';
 import ARControls from 'src/components/ui/ARControls/ARControls';
+import BottomPanel from 'src/components/ui/common/BottomPanel/BottomPanel';
+// import BottomPanel from 'src/components/ui/common/BottomPanel/BottomPanel';
 
 const ARCanvas: React.FC = (): JSX.Element => {
   const overlayContent = useRef<HTMLDivElement>(null);
@@ -33,7 +35,10 @@ const ARCanvas: React.FC = (): JSX.Element => {
           <ARScene />
         </XR>
       </Canvas>
-      <ARControls overlayContentRef={overlayContent} />
+      <div style={{ visibility: 'hidden' }}>
+        <ARControls overlayContentRef={overlayContent} />
+      </div>
+      {/* <BottomPanel overlayContentRef={overlayContent} /> */}
     </>
   );
 };

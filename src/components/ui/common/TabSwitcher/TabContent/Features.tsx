@@ -9,7 +9,7 @@ import {
 } from 'src/components/ui/common/TabSwitcher/TabContent/TabContent.styled';
 
 const Features: React.FC = (): JSX.Element => (
-  <TabContentWrapper noBorder>
+  <TabContentWrapper $noBorder>
     <FeatureWrapper>
       <FeatureIcon>
         <img src={images.common.FeatureIcon} alt="feature-icon" />
