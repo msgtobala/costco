@@ -6,7 +6,6 @@ import {
   Vector3,
   PerspectiveCamera as PerspectiveCameraImpl,
   Mesh,
-  Color,
 } from 'three';
 import {
   Interactive,

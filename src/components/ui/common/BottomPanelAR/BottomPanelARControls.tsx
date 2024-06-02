@@ -5,6 +5,7 @@ const BottomPanelsARControls: React.FC<{
   animations: string[];
   onButtonClicked: (index: number) => void;
 }> = ({ animations, onButtonClicked }): JSX.Element => {
+  console.log(animations);
   return (
     <BottomPanelsARControlsWrapper>
       {/* {animations.map((name: string) => (

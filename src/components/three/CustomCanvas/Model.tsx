@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 
 import { useGLTF } from '@react-three/drei';
-import { Group, Mesh, Color } from 'three';
+import { Group, Mesh } from 'three';
 
 import GLTFResult from 'src/models/components/three/CustomCanvas/Model.type';
 
@@ -15,8 +15,8 @@ const Model: React.FC = (props): JSX.Element => {
 
   useEffect(() => {
     const cube12 = scene.getObjectByName('Cube012');
-    const cube12_4 = scene.getObjectByName('Cube012_4');
-    const cube12_1 = scene.getObjectByName('Cube012_1');
+    // const cube12_4 = scene.getObjectByName('Cube012_4');
+    // const cube12_1 = scene.getObjectByName('Cube012_1');
     // if (cube12_4) {
     //   (cube12_4 as any).material.roughness = 0.8;
     //   (cube12_4 as any).material.color = new Color(0xc6c1c2);
