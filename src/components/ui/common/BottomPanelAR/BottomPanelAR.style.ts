@@ -53,7 +53,7 @@ export const BottomPanelsARControlsWrapper = styled.div`
   padding: 26px 20px 28px 20px;
   background: linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
 
-  & p {
+  & button {
     color: #033e6a;
     background-color: #d3dbe3;
     padding: 10px;

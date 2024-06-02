@@ -11,8 +11,8 @@ const BottomPanelsARControls: React.FC<{
       {/* {animations.map((name: string) => (
         <p>{name}</p>
       ))} */}
-      <p onClick={() => onButtonClicked(1)}>Open doors</p>
-      <p onClick={() => onButtonClicked(0)}>Close doors</p>
+      <button onClick={() => onButtonClicked(1)}>Open doors</button>
+      <button onClick={() => onButtonClicked(0)}>Close doors</button>
     </BottomPanelsARControlsWrapper>
   );
 };
