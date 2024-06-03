@@ -20,6 +20,7 @@ const AppProvider: React.FC<IAppProviderProps> = ({
   const [selectedFeature, setSelectedFeature] = useState<number | null>(null);
   const [selectedHotSpot, setSelectedHotSpot] = useState<number | null>(null);
   const [exitView, setExitView] = useState<boolean>(false);
+  const [showPanels, setShowPanels] = useState<boolean>(false);
 
   const value = useMemo(() => {
     return {
@@ -30,6 +31,7 @@ const AppProvider: React.FC<IAppProviderProps> = ({
       selectedFeature,
       selectedHotSpot,
       exitView,
+      showPanels,
       setAnimations,
       setAnimationIndex,
       setSelectedEnvironment,
@@ -37,6 +39,7 @@ const AppProvider: React.FC<IAppProviderProps> = ({
       setSelectedFeature,
       setSelectedHotSpot,
       setExitView,
+      setShowPanels,
     } as AppProviderType;
   }, [
     animations,
@@ -46,6 +49,7 @@ const AppProvider: React.FC<IAppProviderProps> = ({
     selectedFeature,
     selectedHotSpot,
     exitView,
+    showPanels,
   ]);
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

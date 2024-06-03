@@ -1,6 +1,6 @@
 import React, { Suspense, useRef } from 'react';
 
-import { PerspectiveCamera as PerspectiveCameraImpl } from 'three';
+import { Color, PerspectiveCamera as PerspectiveCameraImpl } from 'three';
 import {
   ContactShadows,
   Environment,
@@ -29,7 +29,13 @@ const Scene: React.FC = (): JSX.Element => {
     <>
       <OrbitControls
         ref={orbitRef}
-        target={[0.3, 2.3, 0]}
+        target={[0.13, 0.5, 0.4]}
+        // target={[0.3, 2.3, 0]}
+        minDistance={0.1}
+        maxDistance={20}
+        minAzimuthAngle={0}
+        minPolarAngle={0}
+        maxPolarAngle={1.57}
         enablePan
         enableDamping
       />
@@ -48,11 +54,40 @@ const Scene: React.FC = (): JSX.Element => {
         />
       )}
       <CustomEnvironment />
+      {/* <mesh position={[0, 2.5, 5]}>
+        <boxGeometry args={[1, 5, 1]} />
+        <meshBasicMaterial color={new Color(0xff).setScalar(15)} />
+      </mesh>
+      <mesh position={[0, 2.5, -5]}>
+        <boxGeometry args={[1, 5, 1]} />
+        <meshBasicMaterial color={new Color(0xff).setScalar(10)} />
+      </mesh>
+      <mesh position={[5, 2.5, 0]}>
+        <boxGeometry args={[1, 5, 1]} />
+        <meshBasicMaterial color={new Color(0xff).setScalar(10)} />
+      </mesh>
+      <mesh position={[-5, 2.5, 0]}>
+        <boxGeometry args={[1, 5, 1]} />
+        <meshBasicMaterial color={new Color(0xff).setScalar(10)} />
+      </mesh>
+      <mesh position={[0, 2.5, 5]}>
+        <boxGeometry args={[1, 5, 1]} />
+        <meshBasicMaterial color={new Color(0xff).setScalar(10)} />
+      </mesh>
+      <mesh position={[0, 9, 2]} rotation={[21, 0, 0]}>
+        <boxGeometry args={[1, 5, 1]} />
+        <meshBasicMaterial color={new Color(0xff).setScalar(10)} />
+      </mesh>
+      <mesh position={[-2.5, 2.5, -0]}>
+        <boxGeometry args={[1, 5, 1]} />
+        <meshBasicMaterial color={new Color(0xff).setScalar(10)} />
+      </mesh> */}
       <ContactShadows smooth opacity={0.8} />
       <PerspectiveCamera
         ref={cameraRef}
         makeDefault
-        position={[-6.76, 3.53, 11.47]}
+        position={[-0.76, 1.36, 4.81]}
+        // position={[-6.76, 3.53, 11.47]}
       />
     </>
   );

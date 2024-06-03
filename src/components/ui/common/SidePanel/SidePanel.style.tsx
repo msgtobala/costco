@@ -34,7 +34,6 @@ export const SidePanelWrapper = styled.div<{ $showPanels: boolean }>`
   animation: ${(props) =>
       props.$showPanels ? sidePanelSlideIn : sidePanelSlideOut}
     1s ease-in-out forwards;
-  animation-delay: 1s;
 `;
 
 export const SidePanelButton = styled.button<{ $selected?: boolean }>`
@@ -71,7 +70,6 @@ export const SidePanelOption = styled.div`
   top: 50%;
   left: -32px;
   transform: translate(0px, -50%);
-  width: 15px;
   height: 100px;
 `;
 
@@ -83,7 +81,7 @@ export const SelectedOption = styled.div<{ $selected: boolean }>`
   width: 28px;
   height: 28px;
   border: ${(props) =>
-    props.$selected ? '2px solid #005DA4' : '1.5px solid transparent'};
+    props.$selected ? '2px solid #005DA4' : '2px solid transparent'};
 `;
 
 export const OptionsPanel = styled.div<{ $color: string }>`
@@ -98,4 +96,11 @@ export const OptionsPanelImage = styled.div<{ $bgImg: string }>`
   height: 20px;
   border-radius: 50%;
   background: url(${(props) => props.$bgImg}) no-repeat center;
+`;
+
+export const OptionsPanelIcon = styled.div<{ $bgImg: string }>`
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: url(${(props) => props.$bgImg}) no-repeat center white;
 `;

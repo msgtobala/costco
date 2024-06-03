@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useProgress } from '@react-three/drei';
 
@@ -8,9 +8,17 @@ import {
 } from 'src/components/ui/SplashLoader/SplashLoader.style';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { useAppContext } from 'src/context/AppProvider';
 
 const SplashLoader: React.FC = (): JSX.Element => {
+  const { setShowPanels } = useAppContext();
   const { progress } = useProgress();
+
+  useEffect(() => {
+    if (progress === 100) {
+      setShowPanels(true);
+    }
+  }, [progress]);
 
   return (
     <SplashContainer $progress={progress}>
@@ -24,7 +32,7 @@ const SplashLoader: React.FC = (): JSX.Element => {
             strokeLinecap: 'butt',
             textSize: '16px',
             pathTransitionDuration: 0.5,
-            pathColor: `rgba(0, 93, 164, ${progress / 100})`,
+            pathColor: `rgba(0, 93, 164, ${Number(progress.toFixed(0)) / 100})`,
             textColor: '#005DA4',
           })}
         />

@@ -8,6 +8,7 @@ interface AppProviderType {
   selectedFeature: number | null;
   selectedHotSpot: number | null;
   exitView: boolean;
+  showPanels: boolean;
   setAnimations: Dispatch<SetStateAction<string[]>>;
   setAnimationIndex: Dispatch<SetStateAction<number | null>>;
   setSelectedEnvironment: Dispatch<SetStateAction<number | null>>;
@@ -15,6 +16,7 @@ interface AppProviderType {
   setSelectedFeature: Dispatch<SetStateAction<number | null>>;
   setSelectedHotSpot: Dispatch<SetStateAction<number | null>>;
   setExitView: Dispatch<SetStateAction<boolean>>;
+  setShowPanels: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface IAppProviderProps {

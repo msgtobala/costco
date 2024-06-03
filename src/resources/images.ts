@@ -9,6 +9,10 @@ import AR from 'src/assets/icons/ar.svg';
 import Share from 'src/assets/icons/share.svg';
 import Hall from 'src/assets/images/hall.png';
 import Kitchen from 'src/assets/images/kitchen.png';
+import Door from 'src/assets/icons/door.svg';
+import Chicken from 'src/assets/icons/chicken.svg';
+import Pizza from 'src/assets/icons/pizza.svg';
+import Bottles from 'src/assets/icons/bottles.svg';
 
 const common = {
   ArrowLeft,
@@ -22,6 +26,10 @@ const common = {
   Share,
   Hall,
   Kitchen,
+  Door,
+  Chicken,
+  Pizza,
+  Bottles,
 };
 
 export default { common };

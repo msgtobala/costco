@@ -33,7 +33,6 @@ export const BottomPanelWrapper = styled.div<{ $showPanels: boolean }>`
   transform: translateY(100%);
   animation: ${(props) => (props.$showPanels ? footerSlideIn : footerSlideOut)}
     1s ease-in-out forwards;
-  animation-delay: 1s;
   z-index: 9999999999999999999999999999999;
 `;
 
@@ -59,5 +58,6 @@ export const BottomPanelsARControlsWrapper = styled.div`
     padding: 10px;
     border-radius: 4px;
     font-size: 12px;
+    border: 1px solid #033e6a;
   }
 `;

@@ -9,6 +9,7 @@ import {
   OptionsPanel,
   SelectedOption,
   OptionsPanelImage,
+  OptionsPanelIcon,
 } from 'src/components/ui/common/SidePanel/SidePanel.style';
 import { useAppContext } from 'src/context/AppProvider';
 import { useNavigate } from 'react-router-dom';
@@ -27,6 +28,12 @@ const icons = [
   {
     name: 'Measurement',
     src: images.common.Measurement,
+    icons: [
+      images.common.Door,
+      images.common.Chicken,
+      images.common.Pizza,
+      images.common.Bottles,
+    ],
   },
   {
     name: 'AR',
@@ -110,6 +117,24 @@ const SidePanel: React.FC = (): JSX.Element => {
                     $selected={index === selectedOption}
                   >
                     <OptionsPanelImage key={image} $bgImg={image} />
+                  </SelectedOption>
+                );
+              })}
+          </SidePanelOption>
+        )}
+        {selectedIcon === 'Measurement' && (
+          <SidePanelOption>
+            {icons
+              .find((icon) => icon.name === 'Measurement')
+              ?.icons?.map((image, index) => {
+                return (
+                  <SelectedOption
+                    key={image + index}
+                    onClick={() => onSelectOption(index)}
+                    $selected={false}
+                    // $selected={index === selectedOption}
+                  >
+                    <OptionsPanelIcon key={image} $bgImg={image} />
                   </SelectedOption>
                 );
               })}

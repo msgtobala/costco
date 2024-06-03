@@ -28,7 +28,7 @@ export const SplashContainer = styled.div<{ $progress: number }>`
           ${hideAnimation} 1s forwards
         `
       : 'none'};
-  animation-delay: ${(props) => (props.$progress === 100 ? '1s' : 'none')};
+  animation-delay: ${(props) => (props.$progress === 100 ? '0.5s' : 'none')};
 `;
 
 export const SplashLoaderWrapper = styled.div`
