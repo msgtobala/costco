@@ -2,9 +2,9 @@ import React from 'react';
 import { BottomPanelsARControlsWrapper } from './BottomPanelAR.style';
 
 const BottomPanelsARControls: React.FC<{
-  animations: string[];
+  animations?: string[];
   onButtonClicked: (index: number) => void;
-}> = ({ animations, onButtonClicked }): JSX.Element => {
+}> = ({ onButtonClicked }): JSX.Element => {
   return (
     <BottomPanelsARControlsWrapper>
       <button onClick={() => onButtonClicked(1)}>Open doors</button>

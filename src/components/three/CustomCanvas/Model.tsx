@@ -14,7 +14,7 @@ const Model: React.FC = (props): JSX.Element => {
   ) as GLTFResult;
 
   useEffect(() => {
-    const cube12 = scene.getObjectByName('Cube012');
+    // const cube12 = scene.getObjectByName('Cube012');
     // const cube12_4 = scene.getObjectByName('Cube012_4');
     // const cube12_1 = scene.getObjectByName('Cube012_1');
     // if (cube12_4) {
@@ -27,9 +27,9 @@ const Model: React.FC = (props): JSX.Element => {
     //   (cube12_1 as any).material.metalness = 0.7;
     //   (cube12_1 as any).material.color = new Color(0x808084);
     // }
-    cube12?.children.forEach((child: any) => {
-      // child.material.roughness = 0.6;
-    });
+    // cube12?.children.forEach((child: any) => {
+    //   child.material.roughness = 0.6;
+    // });
     scene.traverse((object) => {
       if ((object as Mesh).isMesh) {
         object.castShadow = true;

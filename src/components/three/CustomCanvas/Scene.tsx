@@ -1,6 +1,6 @@
 import React, { Suspense, useRef } from 'react';
 
-import { Color, PerspectiveCamera as PerspectiveCameraImpl } from 'three';
+import { PerspectiveCamera as PerspectiveCameraImpl } from 'three';
 import {
   ContactShadows,
   Environment,
@@ -54,34 +54,6 @@ const Scene: React.FC = (): JSX.Element => {
         />
       )}
       <CustomEnvironment />
-      {/* <mesh position={[0, 2.5, 5]}>
-        <boxGeometry args={[1, 5, 1]} />
-        <meshBasicMaterial color={new Color(0xff).setScalar(15)} />
-      </mesh>
-      <mesh position={[0, 2.5, -5]}>
-        <boxGeometry args={[1, 5, 1]} />
-        <meshBasicMaterial color={new Color(0xff).setScalar(10)} />
-      </mesh>
-      <mesh position={[5, 2.5, 0]}>
-        <boxGeometry args={[1, 5, 1]} />
-        <meshBasicMaterial color={new Color(0xff).setScalar(10)} />
-      </mesh>
-      <mesh position={[-5, 2.5, 0]}>
-        <boxGeometry args={[1, 5, 1]} />
-        <meshBasicMaterial color={new Color(0xff).setScalar(10)} />
-      </mesh>
-      <mesh position={[0, 2.5, 5]}>
-        <boxGeometry args={[1, 5, 1]} />
-        <meshBasicMaterial color={new Color(0xff).setScalar(10)} />
-      </mesh>
-      <mesh position={[0, 9, 2]} rotation={[21, 0, 0]}>
-        <boxGeometry args={[1, 5, 1]} />
-        <meshBasicMaterial color={new Color(0xff).setScalar(10)} />
-      </mesh>
-      <mesh position={[-2.5, 2.5, -0]}>
-        <boxGeometry args={[1, 5, 1]} />
-        <meshBasicMaterial color={new Color(0xff).setScalar(10)} />
-      </mesh> */}
       <ContactShadows smooth opacity={0.8} />
       <PerspectiveCamera
         ref={cameraRef}
