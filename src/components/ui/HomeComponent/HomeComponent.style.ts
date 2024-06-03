@@ -18,12 +18,12 @@ export const HomeComponentWrapper = styled.div`
   );
   overflow: hidden;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
 `;
 
 export const CanvasWrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -32,6 +32,6 @@ export const CanvasWrapper = styled.div`
 
   canvas {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
   }
 `;
