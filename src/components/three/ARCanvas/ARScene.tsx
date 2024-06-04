@@ -1,9 +1,6 @@
 import React, { useRef, useState } from 'react';
 
-import {
-  OrbitControls,
-  PerspectiveCamera,
-} from '@react-three/drei';
+import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import {
   Matrix4,
   Vector3,
@@ -19,8 +16,7 @@ import {
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 
 import ARModel from 'src/components/three/ARCanvas/ARModel';
-// import CustomEnvironment from 'src/components/three/Environment';
-// import { useAppContext } from 'src/context/AppProvider';
+import CustomEnvironment from '../Environment';
 
 const ARScene: React.FC = (): JSX.Element => {
   const [modelPosition, setModelPosition] = useState<Vector3 | null>(null);
@@ -28,6 +24,7 @@ const ARScene: React.FC = (): JSX.Element => {
   const orbitRef = useRef<OrbitControlsImpl>(null);
   const cameraRef = useRef<PerspectiveCameraImpl>(null);
   const { isPresenting } = useXR();
+
   useHitTest((hitMatrix: Matrix4) => {
     if (reticleRef.current) {
       hitMatrix.decompose(
@@ -49,8 +46,7 @@ const ARScene: React.FC = (): JSX.Element => {
   return (
     <>
       <OrbitControls ref={orbitRef} target={[0.1, 0.83, 0.31]} />
-      <ambientLight intensity={10} />
-      {/* <CustomEnvironment /> */}
+      <CustomEnvironment />
       {/* <ContactShadows smooth opacity={0.8} /> */}
       {isPresenting && modelPosition && (
         <ARModel position={modelPosition} key="ar-model" />
