@@ -11,7 +11,7 @@ import BottomPanelAR from 'src/components/ui/common/BottomPanelAR/BottomPanelAR'
 const ARCanvas: React.FC = (): JSX.Element => {
   const overlayContent = useRef<HTMLDivElement>(null);
   const [content, setContent] = useState<HTMLElement | null>(null);
-  const { arMode } = useAppContext();
+  const { arMode, setARMode } = useAppContext();
 
   useEffect(() => {
     if (overlayContent.current) {
@@ -29,6 +29,9 @@ const ARCanvas: React.FC = (): JSX.Element => {
             root: content as HTMLElement,
           },
         }}
+        onClick={() => {
+          setARMode(true);
+        }}
         className="ar-button"
       />
       <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
@@ -38,7 +41,7 @@ const ARCanvas: React.FC = (): JSX.Element => {
           </XR>
         </Canvas>
       </div>
-      <div style={{ visibility: arMode ? 'hidden' : 'visible' }}>
+      <div style={{ visibility: arMode ? 'visible' : 'hidden' }}>
         <BottomPanelAR overlayContentRef={overlayContent} />
       </div>
       {/* {arMode ? <BottomPanel overlayContentRef={overlayContent} /> : <p>Hai</p>} */}

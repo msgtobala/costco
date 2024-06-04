@@ -13,7 +13,6 @@ import { type GLTF } from 'three-stdlib';
 import { type ObjectMap } from '@react-three/fiber';
 
 import { useAppContext } from 'src/context/AppProvider';
-import { useXR } from '@react-three/xr';
 
 // TODO: Move Types to model
 type GLTFResult = GLTF &
@@ -34,7 +33,6 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
   const { actions, names } = useAnimations(animations, group);
   const { animationIndex, setAnimations, setAnimationActions } =
     useAppContext();
-  const { isPresenting } = useXR();
 
   useEffect(() => {
     setAnimations(names);
