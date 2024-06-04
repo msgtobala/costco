@@ -38,7 +38,7 @@ const ARCanvas: React.FC = (): JSX.Element => {
           </XR>
         </Canvas>
       </div>
-      <div style={{ visibility: arMode ? 'visible' : 'hidden' }}>
+      <div style={{ visibility: arMode ? 'hidden' : 'hidden' }}>
         <BottomPanelAR overlayContentRef={overlayContent} />
       </div>
       {/* {arMode ? <BottomPanel overlayContentRef={overlayContent} /> : <p>Hai</p>} */}

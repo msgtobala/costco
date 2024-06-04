@@ -71,14 +71,12 @@ const ARScene: React.FC = (): JSX.Element => {
       {isPresenting && modelPosition && (
         <ARModel position={modelPosition} key="ar-model" />
       )}
-      {isPresenting && (
-        <Interactive onSelect={placeModel}>
-          <mesh ref={reticleRef} rotation-x={-Math.PI / 2}>
-            <ringGeometry args={[0.1, 0.25, 32]} />
-            <meshStandardMaterial color="white" />
-          </mesh>
-        </Interactive>
-      )}
+      <Interactive onSelect={placeModel}>
+        <mesh ref={reticleRef} rotation-x={-Math.PI / 2}>
+          <ringGeometry args={[0.1, 0.25, 32]} />
+          <meshStandardMaterial color="white" />
+        </mesh>
+      </Interactive>
       {!isPresenting && (
         <ARModel position={new Vector3(0, 0, 0)} key="interaction-model" />
       )}
