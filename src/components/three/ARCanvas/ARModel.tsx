@@ -29,7 +29,7 @@ type GLTFResult = GLTF &
 const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
   const group = useRef<Group>(null);
   const { nodes, materials, animations, scene } = useGLTF(
-    'https://firebasestorage.googleapis.com/v0/b/figma-plugins-6de61.appspot.com/o/compressed_fridge.glb?alt=media',
+    'https://kmulehampttbgpnlsmgh.supabase.co/storage/v1/object/public/costco-models/compressed_fridge_2.glb?t=2024-06-04T11%3A49%3A05.640Z',
   ) as GLTFResult;
   const { actions, names } = useAnimations(animations, group);
   const { animationIndex, setAnimations, setAnimationActions } =
@@ -1479,7 +1479,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
 };
 
 useGLTF.preload(
-  'https://firebasestorage.googleapis.com/v0/b/figma-plugins-6de61.appspot.com/o/compressed_fridge.glb?alt=media',
+  'https://kmulehampttbgpnlsmgh.supabase.co/storage/v1/object/public/costco-models/compressed_fridge_2.glb?t=2024-06-04T11%3A49%3A05.640Z',
 );
 
 ARModel.defaultProps = {
