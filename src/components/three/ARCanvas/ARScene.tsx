@@ -47,7 +47,7 @@ const ARScene: React.FC = (): JSX.Element => {
     <>
       <OrbitControls ref={orbitRef} target={[0.1, 0.83, 0.31]} />
       <CustomEnvironment />
-      {/* <ContactShadows smooth opacity={0.8} /> */}
+      <ContactShadows smooth opacity={0.8} />
       {isPresenting && modelPosition && (
         <ARModel position={modelPosition} key="ar-model" />
       )}
