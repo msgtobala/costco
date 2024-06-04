@@ -73,7 +73,7 @@ const ARScene: React.FC = (): JSX.Element => {
       {showPresentation && modelPosition && (
         <ARModel position={modelPosition} key="ar-model" />
       )}
-      {isPresenting && (
+      {showPresentation && (
         <Interactive onSelect={placeModel}>
           <mesh ref={reticleRef} rotation-x={-Math.PI / 2}>
             <ringGeometry args={[0.1, 0.25, 32]} />
@@ -81,7 +81,7 @@ const ARScene: React.FC = (): JSX.Element => {
           </mesh>
         </Interactive>
       )}
-      {!showPresentation && (
+      {!isPresenting && (
         <ARModel position={new Vector3(0, 0, 0)} key="interaction-model" />
       )}
       <PerspectiveCamera

@@ -12,7 +12,7 @@ import useModelAnimations from 'src/hooks/useAnimation';
 const Model: React.FC = (props): JSX.Element => {
   const group = useRef<Group>(null);
   const { nodes, materials, scene, animations } = useGLTF(
-    'https://kmulehampttbgpnlsmgh.supabase.co/storage/v1/object/public/costco-models/compressed_new_fridge_v2.glb?t=2024-06-03T18%3A15%3A48.210Z',
+    'https://firebasestorage.googleapis.com/v0/b/figma-plugins-6de61.appspot.com/o/compressed_fridge.glb?alt=media',
   ) as GLTFResult;
   const { actions, names } = useAnimations(animations, group);
   const { setAnimations, setAnimationActions } = useAppContext();
@@ -1427,7 +1427,7 @@ const Model: React.FC = (props): JSX.Element => {
 };
 
 useGLTF.preload(
-  'https://kmulehampttbgpnlsmgh.supabase.co/storage/v1/object/public/costco-models/compressed_new_fridge_v2.glb?t=2024-06-03T18%3A15%3A48.210Z',
+  'https://firebasestorage.googleapis.com/v0/b/figma-plugins-6de61.appspot.com/o/compressed_fridge.glb?alt=media',
 );
 
 export default Model;
