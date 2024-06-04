@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import {
-  ContactShadows,
   OrbitControls,
   PerspectiveCamera,
 } from '@react-three/drei';
@@ -20,8 +19,8 @@ import {
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 
 import ARModel from 'src/components/three/ARCanvas/ARModel';
-import CustomEnvironment from 'src/components/three/Environment';
-import { useAppContext } from 'src/context/AppProvider';
+// import CustomEnvironment from 'src/components/three/Environment';
+// import { useAppContext } from 'src/context/AppProvider';
 
 const ARScene: React.FC = (): JSX.Element => {
   const [modelPosition, setModelPosition] = useState<Vector3 | null>(null);
