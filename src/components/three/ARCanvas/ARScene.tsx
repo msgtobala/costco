@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import { ContactShadows, OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import {
   Matrix4,
   Vector3,
