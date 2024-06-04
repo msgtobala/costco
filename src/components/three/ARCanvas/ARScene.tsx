@@ -49,7 +49,18 @@ const ARScene: React.FC = (): JSX.Element => {
 
   return (
     <>
-      <OrbitControls ref={orbitRef} target={[0.1, 0.83, 0.31]} />
+      <OrbitControls
+        ref={orbitRef}
+        target={[0.1, 0.83, 0.31]}
+        minDistance={0.1}
+        maxDistance={20}
+        minAzimuthAngle={0}
+        minPolarAngle={0}
+        maxPolarAngle={1.57}
+        enablePan
+        enableDamping
+        zoomSpeed={0.5}
+      />
       <CustomEnvironment />
       {!isPresenting && <ContactShadows smooth opacity={0.8} />}
       {isPresenting && modelPosition && (
