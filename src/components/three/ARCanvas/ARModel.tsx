@@ -1,18 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 
 import { useGLTF, useAnimations } from '@react-three/drei';
-import {
-  Vector3,
-  MeshStandardMaterial,
-  AnimationAction,
-  LoopOnce,
-  Group,
-  Mesh,
-} from 'three';
+import { Vector3, MeshStandardMaterial, Group, Mesh } from 'three';
 import { type GLTF } from 'three-stdlib';
 import { type ObjectMap } from '@react-three/fiber';
 
 import { useAppContext } from 'src/context/AppProvider';
+import useModelAnimations from 'src/hooks/useAnimation';
 
 // TODO: Move Types to model
 type GLTFResult = GLTF &
@@ -30,9 +24,8 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
   const { nodes, materials, animations, scene } = useGLTF(
     'https://kmulehampttbgpnlsmgh.supabase.co/storage/v1/object/public/costco-models/compressed_fridge_2.glb?t=2024-06-04T11%3A49%3A05.640Z',
   ) as GLTFResult;
-  const { actions, names } = useAnimations(animations, group);
-  const { animationIndex, setAnimations, setAnimationActions } =
-    useAppContext();
+  const { actions, names, mixer } = useAnimations(animations, group);
+  const { setAnimations, setAnimationActions } = useAppContext();
 
   useEffect(() => {
     setAnimations(names);
@@ -48,45 +41,47 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
     });
   }, []);
 
-  useEffect(() => {
-    if (animationIndex !== null) {
-      console.log(animationIndex);
+  useModelAnimations({ mixer: mixer, animations: animations, names: names });
 
-      // close door
-      if (animationIndex === 0) {
-        const closedoorR = actions['closedoorR'] as AnimationAction;
-        const doorcloseL = actions['doorcloseL'] as AnimationAction;
-        closedoorR.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
-        doorcloseL.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
-        closedoorR.clampWhenFinished = true;
-        doorcloseL.clampWhenFinished = true;
-      }
+  // useEffect(() => {
+  //   if (animationIndex !== null) {
+  //     console.log(animationIndex);
 
-      // open door
-      if (animationIndex === 1) {
-        const opendoorR = actions['opendoorR'] as AnimationAction;
-        const opendoorL = actions['opendoorL'] as AnimationAction;
-        opendoorR.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
-        opendoorL.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
-        opendoorR.clampWhenFinished = true;
-        opendoorL.clampWhenFinished = true;
-      }
+  //     // close door
+  //     if (animationIndex === 0) {
+  //       const closedoorR = actions['closedoorR'] as AnimationAction;
+  //       const doorcloseL = actions['doorcloseL'] as AnimationAction;
+  //       closedoorR.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
+  //       doorcloseL.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
+  //       closedoorR.clampWhenFinished = true;
+  //       doorcloseL.clampWhenFinished = true;
+  //     }
 
-      // close freezer
-      if (animationIndex === 2) {
-        const freezerclose = actions['freezerclose'] as AnimationAction;
-        freezerclose.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
-        freezerclose.clampWhenFinished = true;
-      }
+  //     // open door
+  //     if (animationIndex === 1) {
+  //       const opendoorR = actions['opendoorR'] as AnimationAction;
+  //       const opendoorL = actions['opendoorL'] as AnimationAction;
+  //       opendoorR.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
+  //       opendoorL.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
+  //       opendoorR.clampWhenFinished = true;
+  //       opendoorL.clampWhenFinished = true;
+  //     }
 
-      // open freezer
-      if (animationIndex === 3) {
-        const freezeropen = actions['freezeropen'] as AnimationAction;
-        freezeropen.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
-        freezeropen.clampWhenFinished = true;
-      }
-    }
-  }, [animationIndex]);
+  //     // close freezer
+  //     if (animationIndex === 2) {
+  //       const freezerclose = actions['freezerclose'] as AnimationAction;
+  //       freezerclose.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
+  //       freezerclose.clampWhenFinished = true;
+  //     }
+
+  //     // open freezer
+  //     if (animationIndex === 3) {
+  //       const freezeropen = actions['freezeropen'] as AnimationAction;
+  //       freezeropen.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
+  //       freezeropen.clampWhenFinished = true;
+  //     }
+  //   }
+  // }, [animationIndex]);
 
   return (
     <group ref={group} {...props} dispose={null}>
