@@ -70,10 +70,10 @@ const ARScene: React.FC = (): JSX.Element => {
       />
       <CustomEnvironment />
       <ContactShadows smooth opacity={0.8} />
-      {showPresentation && modelPosition && (
+      {isPresenting && modelPosition && (
         <ARModel position={modelPosition} key="ar-model" />
       )}
-      {showPresentation && (
+      {isPresenting && (
         <Interactive onSelect={placeModel}>
           <mesh ref={reticleRef} rotation-x={-Math.PI / 2}>
             <ringGeometry args={[0.1, 0.25, 32]} />
