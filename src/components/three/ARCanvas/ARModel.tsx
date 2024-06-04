@@ -91,48 +91,36 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
   }, [animationIndex]);
 
   return (
-    <group
-      ref={group}
-      {...props}
-      dispose={null}
-      scale={isPresenting ? [1, 1, 1] : [1, 1, 1]}
-    >
-      {/* <DimensionLines
-        dimensions={{
-          width: 1.16,
-          height: 1.79,
-          depth: 1.26,
-        }}
-      /> */}
+    <group ref={group} {...props} dispose={null}>
       <group name="Scene">
         <group name="Att_00_high" scale={0.025}>
           <mesh
-            name="Mesh"
+            name="Mesh031"
             castShadow
             receiveShadow
-            geometry={nodes.Mesh.geometry}
-            material={materials.Samsung_Fridge_high}
+            geometry={nodes.Mesh031.geometry}
+            material={materials['Samsung_Fridge_high.001']}
           />
           <mesh
-            name="Mesh_1"
+            name="Mesh031_1"
             castShadow
             receiveShadow
-            geometry={nodes.Mesh_1.geometry}
-            material={materials.innterplastic}
+            geometry={nodes.Mesh031_1.geometry}
+            material={materials['innterplastic.001']}
           />
           <mesh
-            name="Mesh_2"
+            name="Mesh031_2"
             castShadow
             receiveShadow
-            geometry={nodes.Mesh_2.geometry}
-            material={materials['Material.006']}
+            geometry={nodes.Mesh031_2.geometry}
+            material={materials['Material.002']}
           />
           <mesh
             name="Att_01_high"
             castShadow
             receiveShadow
             geometry={nodes.Att_01_high.geometry}
-            material={materials['rim plastic']}
+            material={materials['rim plastic.001']}
             position={[-0.049, 31.461, -9.259]}
           />
           <mesh
@@ -140,55 +128,55 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
             castShadow
             receiveShadow
             geometry={nodes.Att_02_high.geometry}
-            material={materials['frosted tray']}
+            material={materials['frosted tray.001']}
             position={[0, 37.887, -10.375]}
           />
           <group name="Att_03_high" position={[0.003, 41.782, -10.375]}>
             <mesh
-              name="Mesh015"
+              name="Mesh050"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh015.geometry}
-              material={materials['rim plastic']}
+              geometry={nodes.Mesh050.geometry}
+              material={materials['rim plastic.001']}
             />
             <mesh
-              name="Mesh015_1"
+              name="Mesh050_1"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh015_1.geometry}
-              material={materials.glass}
+              geometry={nodes.Mesh050_1.geometry}
+              material={materials['glass.002']}
             />
           </group>
           <group name="Att_04_high" position={[-12.963, 61.22, -7.634]}>
             <mesh
-              name="Mesh016"
+              name="Mesh051"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh016.geometry}
-              material={materials['Material.020']}
+              geometry={nodes.Mesh051.geometry}
+              material={materials['Material.003']}
             />
             <mesh
-              name="Mesh016_1"
+              name="Mesh051_1"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh016_1.geometry}
-              material={materials['Material.021']}
+              geometry={nodes.Mesh051_1.geometry}
+              material={materials['Material.004']}
             />
           </group>
           <group name="Att_05_high" position={[0, 48.529, -2.632]}>
             <mesh
-              name="Mesh017"
+              name="Mesh052"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh017.geometry}
-              material={materials['rim plastic']}
+              geometry={nodes.Mesh052.geometry}
+              material={materials['rim plastic.001']}
             />
             <mesh
-              name="Mesh017_1"
+              name="Mesh052_1"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh017_1.geometry}
-              material={materials.glass}
+              geometry={nodes.Mesh052_1.geometry}
+              material={materials['glass.002']}
             />
           </group>
           <mesh
@@ -196,7 +184,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
             castShadow
             receiveShadow
             geometry={nodes.Att_07_high.geometry}
-            material={materials.Samsung_Fridge_high}
+            material={materials['Samsung_Fridge_high.001']}
             position={[-15.977, 68.586, 13.924]}
           />
           <mesh
@@ -204,30 +192,30 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
             castShadow
             receiveShadow
             geometry={nodes.Att_09_high.geometry}
-            material={materials.Samsung_Fridge_high}
+            material={materials['Samsung_Fridge_high.001']}
             position={[16.07, 68.586, 13.924]}
           />
-          <group name="Att_11_high" position={[0, 0.232, 33.728]}>
+          <group name="Att_11_high" position={[0, 0.232, 17.998]}>
             <mesh
-              name="Mesh004"
+              name="Mesh055"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh004.geometry}
-              material={materials.Samsung_Fridge_high}
+              geometry={nodes.Mesh055.geometry}
+              material={materials['Samsung_Fridge_high.001']}
             />
             <mesh
-              name="Mesh004_1"
+              name="Mesh055_1"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh004_1.geometry}
-              material={materials.innterplastic}
+              geometry={nodes.Mesh055_1.geometry}
+              material={materials['innterplastic.001']}
             />
             <mesh
               name="Att_14_high"
               castShadow
               receiveShadow
               geometry={nodes.Att_14_high.geometry}
-              material={materials.Samsung_Fridge_high}
+              material={materials['Samsung_Fridge_high.001']}
               position={[-13.325, 23.636, -0.955]}
             />
             <mesh
@@ -235,7 +223,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Att_17_high.geometry}
-              material={materials.handle}
+              material={materials['handle.001']}
               position={[0, 22.906, 1.33]}
             />
             <mesh
@@ -243,7 +231,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Box001.geometry}
-              material={materials['PVC White Matte Rough']}
+              material={materials['PVC White Matte Rough.001']}
               position={[8.448, 2.599, -12.962]}
               scale={0.048}
             />
@@ -252,7 +240,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.bubble.geometry}
-              material={materials.Ice}
+              material={materials['Ice.001']}
               position={[-10.973, 3.721, -15.699]}
               scale={1.209}
             />
@@ -261,7 +249,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Capsule002.geometry}
-              material={materials['Material #25']}
+              material={materials['Material #25.001']}
               position={[11.098, 3.644, -9.769]}
               rotation={[-0.094, 0, Math.PI / 2]}
               scale={[0.041, 0.05, 0.045]}
@@ -271,7 +259,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Capsule003.geometry}
-              material={materials['Material #25']}
+              material={materials['Material #25.001']}
               position={[11.098, 3.644, -11.365]}
               rotation={[2.316, 0, Math.PI / 2]}
               scale={[0.045, 0.05, 0.041]}
@@ -281,7 +269,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Capsule004.geometry}
-              material={materials['Material #25']}
+              material={materials['Material #25.001']}
               position={[11.098, 3.644, -12.963]}
               rotation={[-0.282, 0, Math.PI / 2]}
               scale={[0.041, 0.05, 0.045]}
@@ -291,7 +279,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Capsule005.geometry}
-              material={materials['Material #25']}
+              material={materials['Material #25.001']}
               position={[11.098, 3.644, -14.56]}
               rotation={[-0.738, 0, Math.PI / 2]}
               scale={[0.041, 0.05, 0.045]}
@@ -301,7 +289,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Capsule006.geometry}
-              material={materials['Material #25']}
+              material={materials['Material #25.001']}
               position={[11.098, 3.644, -16.157]}
               rotation={[0.468, 0, Math.PI / 2]}
               scale={[0.041, 0.05, 0.045]}
@@ -311,7 +299,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Ice_Cube_Tray.geometry}
-              material={materials.Plastic}
+              material={materials['Plastic.001']}
               position={[-6.817, 3.37, -15.699]}
               scale={1.209}
             />
@@ -320,7 +308,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Ice_Cube_Tray001.geometry}
-              material={materials.Ice}
+              material={materials['Ice.001']}
               position={[-6.817, 3.37, -15.699]}
               scale={1.209}
             />
@@ -329,7 +317,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Plane002.geometry}
-              material={materials['Acrylic Transparent Clear']}
+              material={materials['Acrylic Transparent Clear.001']}
               position={[8.377, 4.66, -12.63]}
               scale={[0.039, 0.039, 0.047]}
             />
@@ -338,40 +326,44 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Plane003.geometry}
-              material={materials['Material #28']}
+              material={materials['Material #28.001']}
               position={[8.463, 4.772, -13.041]}
               rotation={[0, -Math.PI / 2, 0]}
               scale={0.048}
             />
           </group>
-          <group name="Att_12_high" position={[-17.545, 69.708, 14.731]}>
+          <group
+            name="Att_12_high"
+            position={[-17.545, 69.708, 14.731]}
+            rotation={[0, 1.571, 0]}
+          >
             <mesh
-              name="Mesh018"
+              name="Mesh066"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh018.geometry}
-              material={materials.innterplastic}
+              geometry={nodes.Mesh066.geometry}
+              material={materials['innterplastic.001']}
             />
             <mesh
-              name="Mesh018_1"
+              name="Mesh066_1"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh018_1.geometry}
-              material={materials.Samsung_Fridge_high}
+              geometry={nodes.Mesh066_1.geometry}
+              material={materials['Samsung_Fridge_high.001']}
             />
             <mesh
-              name="Mesh018_2"
+              name="Mesh066_2"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh018_2.geometry}
-              material={materials['fridge led']}
+              geometry={nodes.Mesh066_2.geometry}
+              material={materials['fridge led.001']}
             />
             <mesh
               name="Att_08_high"
               castShadow
               receiveShadow
               geometry={nodes.Att_08_high.geometry}
-              material={materials.Samsung_Fridge_high}
+              material={materials['Samsung_Fridge_high.001']}
               position={[-0.329, -0.507, 0.627]}
             />
             <mesh
@@ -379,7 +371,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Att_16_high.geometry}
-              material={materials.handle}
+              material={materials['handle.001']}
               position={[-4.871, -21.183, 16.16]}
             />
             <mesh
@@ -387,7 +379,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Att_19_high.geometry}
-              material={materials['Material.019']}
+              material={materials['Material.015']}
               position={[-0.071, -16.953, 6.45]}
             />
             <mesh
@@ -395,7 +387,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Att_22_high.geometry}
-              material={materials['frosted tray']}
+              material={materials['frosted tray.001']}
               position={[-0.393, -32.103, 8.229]}
               rotation={[-Math.PI, 0, -Math.PI]}
             />
@@ -404,7 +396,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Att_23_high.geometry}
-              material={materials['frosted tray']}
+              material={materials['frosted tray.001']}
               position={[-0.393, -11.307, 12.83]}
               rotation={[-Math.PI, 0, -Math.PI]}
               scale={[0.772, 0.831, 0.388]}
@@ -414,7 +406,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Att_24_high.geometry}
-              material={materials['frosted tray']}
+              material={materials['frosted tray.001']}
               position={[-0.456, -11.307, 5.482]}
               rotation={[-Math.PI, 0, -Math.PI]}
               scale={[0.779, 0.831, 0.515]}
@@ -424,7 +416,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Can_415g001.geometry}
-              material={materials.Can_415g}
+              material={materials['Can_415g.001']}
               position={[1.707, -12.067, 6.912]}
               rotation={[Math.PI, -0.896, Math.PI]}
               scale={35.433}
@@ -434,7 +426,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.carbonara_jar.geometry}
-              material={materials.initialShadingGroup}
+              material={materials['initialShadingGroup.001']}
               position={[1.904, -33.227, 3.848]}
               rotation={[Math.PI / 2, 0, 2.964]}
               scale={0.101}
@@ -445,32 +437,32 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               scale={1.033}
             >
               <mesh
-                name="Circle007"
+                name="Circle010"
                 castShadow
                 receiveShadow
-                geometry={nodes.Circle007.geometry}
-                material={materials['Material.011']}
+                geometry={nodes.Circle010.geometry}
+                material={materials['Material.017']}
               />
               <mesh
-                name="Circle007_1"
+                name="Circle010_1"
                 castShadow
                 receiveShadow
-                geometry={nodes.Circle007_1.geometry}
-                material={materials['Material.008']}
+                geometry={nodes.Circle010_1.geometry}
+                material={materials['Material.023']}
               />
               <mesh
-                name="Circle007_2"
+                name="Circle010_2"
                 castShadow
                 receiveShadow
-                geometry={nodes.Circle007_2.geometry}
-                material={materials['Material.009']}
+                geometry={nodes.Circle010_2.geometry}
+                material={materials['Material.024']}
               />
               <mesh
-                name="Circle007_3"
+                name="Circle010_3"
                 castShadow
                 receiveShadow
-                geometry={nodes.Circle007_3.geometry}
-                material={materials['Material.010']}
+                geometry={nodes.Circle010_3.geometry}
+                material={materials['Material.027']}
               />
             </group>
             <group
@@ -480,25 +472,25 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               scale={[0.82, 0.068, 0.82]}
             >
               <mesh
-                name="Cylinder001_1"
+                name="Cylinder008"
                 castShadow
                 receiveShadow
-                geometry={nodes.Cylinder001_1.geometry}
-                material={materials['Material.012']}
+                geometry={nodes.Cylinder008.geometry}
+                material={materials['Material.028']}
               />
               <mesh
-                name="Cylinder001_2"
+                name="Cylinder008_1"
                 castShadow
                 receiveShadow
-                geometry={nodes.Cylinder001_2.geometry}
-                material={materials['Material.013']}
+                geometry={nodes.Cylinder008_1.geometry}
+                material={materials['Material.029']}
               />
               <mesh
-                name="Cylinder001_3"
+                name="Cylinder008_2"
                 castShadow
                 receiveShadow
-                geometry={nodes.Cylinder001_3.geometry}
-                material={materials['Material.014']}
+                geometry={nodes.Cylinder008_2.geometry}
+                material={materials['Material.030']}
               />
             </group>
             <group
@@ -508,25 +500,25 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               scale={[0.82, 0.068, 0.82]}
             >
               <mesh
-                name="Cylinder003"
+                name="Cylinder009"
                 castShadow
                 receiveShadow
-                geometry={nodes.Cylinder003.geometry}
-                material={materials['Material.012']}
+                geometry={nodes.Cylinder009.geometry}
+                material={materials['Material.028']}
               />
               <mesh
-                name="Cylinder003_1"
+                name="Cylinder009_1"
                 castShadow
                 receiveShadow
-                geometry={nodes.Cylinder003_1.geometry}
-                material={materials['Material.013']}
+                geometry={nodes.Cylinder009_1.geometry}
+                material={materials['Material.029']}
               />
               <mesh
-                name="Cylinder003_2"
+                name="Cylinder009_2"
                 castShadow
                 receiveShadow
-                geometry={nodes.Cylinder003_2.geometry}
-                material={materials['Material.014']}
+                geometry={nodes.Cylinder009_2.geometry}
+                material={materials['Material.030']}
               />
             </group>
             <mesh
@@ -534,32 +526,36 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Red_Pear.geometry}
-              material={materials['Red Pear']}
+              material={materials['Red Pear.001']}
               position={[1.921, -10.324, 13.916]}
               scale={39.37}
             />
           </group>
-          <group name="Att_13_high" position={[17.641, 69.708, 14.726]}>
+          <group
+            name="Att_13_high"
+            position={[17.641, 69.708, 14.726]}
+            rotation={[0, -1.571, 0]}
+          >
             <mesh
-              name="Mesh007"
+              name="Mesh073"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh007.geometry}
-              material={materials.innterplastic}
+              geometry={nodes.Mesh073.geometry}
+              material={materials['innterplastic.001']}
             />
             <mesh
-              name="Mesh007_1"
+              name="Mesh073_1"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh007_1.geometry}
-              material={materials.Samsung_Fridge_high}
+              geometry={nodes.Mesh073_1.geometry}
+              material={materials['Samsung_Fridge_high.001']}
             />
             <mesh
               name="Att_06_high"
               castShadow
               receiveShadow
               geometry={nodes.Att_06_high.geometry}
-              material={materials['frosted tray']}
+              material={materials['frosted tray.001']}
               position={[0.143, -10.434, 9.067]}
             />
             <mesh
@@ -567,7 +563,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Att_10_high.geometry}
-              material={materials.Samsung_Fridge_high}
+              material={materials['Samsung_Fridge_high.001']}
               position={[0.335, -0.507, 0.633]}
             />
             <mesh
@@ -575,7 +571,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Att_18_high.geometry}
-              material={materials.handle}
+              material={materials['handle.001']}
               position={[4.433, -21.183, 16.436]}
             />
             <mesh
@@ -583,7 +579,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Att_20_high.geometry}
-              material={materials['frosted tray']}
+              material={materials['frosted tray.001']}
               position={[0.143, -19.431, 9.067]}
             />
             <mesh
@@ -591,7 +587,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Att_21_high.geometry}
-              material={materials['frosted tray']}
+              material={materials['frosted tray.001']}
               position={[0.143, -32.103, 9.067]}
             />
             <mesh
@@ -599,7 +595,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.bottle002.geometry}
-              material={materials.milka}
+              material={materials['milka.001']}
               position={[-2.786, -17.007, 13.982]}
               rotation={[0, -1.393, 0]}
               scale={[0.976, 1.191, 0.976]}
@@ -609,7 +605,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
                 castShadow
                 receiveShadow
                 geometry={nodes.milk002.geometry}
-                material={materials['milk.001']}
+                material={materials['milk.003']}
                 position={[0, -1.016, 0]}
                 scale={1.001}
               />
@@ -619,7 +615,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.bottle003.geometry}
-              material={materials.milka}
+              material={materials['milka.001']}
               position={[-2.786, -17.007, 11.3]}
               rotation={[0, -1.393, 0]}
               scale={[0.976, 1.191, 0.976]}
@@ -629,7 +625,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
                 castShadow
                 receiveShadow
                 geometry={nodes.milk003.geometry}
-                material={materials['milk.002']}
+                material={materials['milk.004']}
                 position={[0, -1.016, 0]}
                 scale={1.001}
               />
@@ -639,9 +635,9 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.box_mango.geometry}
-              material={materials.box}
+              material={materials['box.001']}
               position={[-2.523, -33.139, 3.81]}
-              rotation={[0, -Math.PI / 2, 0]}
+              rotation={[0, -1.571, 0]}
               scale={56.833}
             />
             <mesh
@@ -649,9 +645,9 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.box_manzana.geometry}
-              material={materials.box}
+              material={materials['box.001']}
               position={[-2.523, -33.139, 7.328]}
-              rotation={[0, -Math.PI / 2, 0]}
+              rotation={[0, -1.571, 0]}
               scale={56.833}
             />
             <mesh
@@ -659,9 +655,9 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.box_mora.geometry}
-              material={materials.box}
+              material={materials['box.001']}
               position={[-2.523, -33.139, 10.484]}
-              rotation={[0, -Math.PI / 2, 0]}
+              rotation={[0, -1.571, 0]}
               scale={56.833}
             />
             <mesh
@@ -669,9 +665,9 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.box_naranja002.geometry}
-              material={materials.box}
+              material={materials['box.001']}
               position={[-2.523, -33.139, 14.371]}
-              rotation={[0, -Math.PI / 2, 0]}
+              rotation={[0, -1.571, 0]}
               scale={56.833}
             />
             <group
@@ -681,18 +677,18 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               scale={1.315}
             >
               <mesh
-                name="can_Circle001_1"
+                name="can_Circle004"
                 castShadow
                 receiveShadow
-                geometry={nodes.can_Circle001_1.geometry}
-                material={materials.Metal}
+                geometry={nodes.can_Circle004.geometry}
+                material={materials['Metal.002']}
               />
               <mesh
-                name="can_Circle001_2"
+                name="can_Circle004_1"
                 castShadow
                 receiveShadow
-                geometry={nodes.can_Circle001_2.geometry}
-                material={materials.Label}
+                geometry={nodes.can_Circle004_1.geometry}
+                material={materials['Label.003']}
               />
             </group>
             <group
@@ -702,18 +698,18 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               scale={1.315}
             >
               <mesh
-                name="can_Circle002_1"
+                name="can_Circle005"
                 castShadow
                 receiveShadow
-                geometry={nodes.can_Circle002_1.geometry}
-                material={materials['Metal.001']}
+                geometry={nodes.can_Circle005.geometry}
+                material={materials['Metal.003']}
               />
               <mesh
-                name="can_Circle002_2"
+                name="can_Circle005_1"
                 castShadow
                 receiveShadow
-                geometry={nodes.can_Circle002_2.geometry}
-                material={materials['Label.002']}
+                geometry={nodes.can_Circle005_1.geometry}
+                material={materials['Label.004']}
               />
             </group>
             <group
@@ -723,18 +719,18 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               scale={1.315}
             >
               <mesh
-                name="can_Circle003_1"
+                name="can_Circle006"
                 castShadow
                 receiveShadow
-                geometry={nodes.can_Circle003_1.geometry}
-                material={materials.Metal}
+                geometry={nodes.can_Circle006.geometry}
+                material={materials['Metal.002']}
               />
               <mesh
-                name="can_Circle003_2"
+                name="can_Circle006_1"
                 castShadow
                 receiveShadow
-                geometry={nodes.can_Circle003_2.geometry}
-                material={materials['Label.001']}
+                geometry={nodes.can_Circle006_1.geometry}
+                material={materials['Label.005']}
               />
             </group>
             <mesh
@@ -742,7 +738,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Cube.geometry}
-              material={materials['Material.018']}
+              material={materials['Material.031']}
               position={[-2.643, -10.931, 11.965]}
               rotation={[0, 1.571, 0]}
               scale={[3.003, 0.478, 1.631]}
@@ -752,7 +748,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Sphere.geometry}
-              material={materials['Material.016']}
+              material={materials['Material.032']}
               position={[-1.804, -10.094, 14.083]}
               rotation={[0, 1.571, 0]}
               scale={[0.705, 0.914, 0.705]}
@@ -762,7 +758,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Sphere001.geometry}
-              material={materials['Material.016']}
+              material={materials['Material.032']}
               position={[-1.804, -10.094, 12.113]}
               rotation={[0, 1.571, 0]}
               scale={[0.705, 0.914, 0.705]}
@@ -772,7 +768,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Sphere002.geometry}
-              material={materials['Material.016']}
+              material={materials['Material.032']}
               position={[-1.804, -10.094, 10.081]}
               rotation={[0, 1.571, 0]}
               scale={[0.705, 0.914, 0.705]}
@@ -782,7 +778,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Sphere003.geometry}
-              material={materials['Material.016']}
+              material={materials['Material.032']}
               position={[-3.494, -10.094, 10.081]}
               rotation={[0, 1.571, 0]}
               scale={[0.705, 0.914, 0.705]}
@@ -790,18 +786,18 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           </group>
           <group name="Att_25_high" position={[0, 56.868, -2.632]}>
             <mesh
-              name="Mesh027"
+              name="Mesh079"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh027.geometry}
-              material={materials['rim plastic']}
+              geometry={nodes.Mesh079.geometry}
+              material={materials['rim plastic.001']}
             />
             <mesh
-              name="Mesh027_1"
+              name="Mesh079_1"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh027_1.geometry}
-              material={materials.glass}
+              geometry={nodes.Mesh079_1.geometry}
+              material={materials['glass.002']}
             />
           </group>
           <group
@@ -810,18 +806,18 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
             scale={[0.636, 1, 1]}
           >
             <mesh
-              name="Mesh028"
+              name="Mesh080"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh028.geometry}
-              material={materials['rim plastic']}
+              geometry={nodes.Mesh080.geometry}
+              material={materials['rim plastic.001']}
             />
             <mesh
-              name="Mesh028_1"
+              name="Mesh080_1"
               castShadow
               receiveShadow
-              geometry={nodes.Mesh028_1.geometry}
-              material={materials.glass}
+              geometry={nodes.Mesh080_1.geometry}
+              material={materials['glass.002']}
             />
           </group>
           <mesh
@@ -829,7 +825,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
             castShadow
             receiveShadow
             geometry={nodes.Att_27_high.geometry}
-            material={materials['Material.001']}
+            material={materials['Material.033']}
             position={[0, 66.757, 1.721]}
           />
           <mesh
@@ -837,7 +833,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
             castShadow
             receiveShadow
             geometry={nodes.Att_27_high001.geometry}
-            material={materials['Material.001']}
+            material={materials['Material.033']}
             position={[0, 25.204, 12.329]}
             scale={[4.322, 1, 1]}
           />
@@ -846,7 +842,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
             castShadow
             receiveShadow
             geometry={nodes.Att_28_high.geometry}
-            material={materials['Material.005']}
+            material={materials['Material.034']}
             position={[-15.872, 48.214, 8.481]}
             rotation={[0, 0, Math.PI / 2]}
           />
@@ -855,7 +851,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
             castShadow
             receiveShadow
             geometry={nodes.Att_29_high.geometry}
-            material={materials['Material.005']}
+            material={materials['Material.034']}
             position={[15.942, 48.214, 8.481]}
             rotation={[Math.PI, 0, -Math.PI / 2]}
           />
@@ -864,7 +860,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
             castShadow
             receiveShadow
             geometry={nodes.Att_30_high.geometry}
-            material={materials['rim plastic']}
+            material={materials['rim plastic.001']}
             position={[-0.049, 31.461, -9.259]}
           />
         </group>
@@ -873,7 +869,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Apple.geometry}
-          material={materials.Apple}
+          material={materials['Apple.002']}
           position={[-0.143, 1.101, -0.013]}
           rotation={[Math.PI, -0.892, Math.PI]}
           scale={0.016}
@@ -883,7 +879,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Red_Bell_Pepper.geometry}
-          material={materials['Red Bell Pepper']}
+          material={materials['Red Bell Pepper.002']}
           position={[-0.233, 0.782, 0.054]}
         />
         <mesh
@@ -891,7 +887,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.bottle.geometry}
-          material={materials.milka}
+          material={materials['milka.001']}
           position={[-0.163, 1.3, -0.042]}
           rotation={[0, -1.393, 0]}
           scale={0.022}
@@ -901,7 +897,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
             castShadow
             receiveShadow
             geometry={nodes.milk.geometry}
-            material={materials.milk}
+            material={materials['milk.005']}
             position={[0, -1.016, 0]}
             scale={1.001}
           />
@@ -911,7 +907,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.polySurface26.geometry}
-          material={materials.M_RoastChicken}
+          material={materials['M_RoastChicken.001']}
           position={[0.192, 1.113, -0.1]}
           rotation={[Math.PI / 2, 0, -Math.PI / 4]}
           scale={0}
@@ -921,7 +917,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Broccoli.geometry}
-          material={materials.Broccoli}
+          material={materials['Broccoli.001']}
           position={[-0.237, 0.93, -0.115]}
           rotation={[-0.018, -0.01, 0.992]}
           scale={0.657}
@@ -931,7 +927,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Broccoli001.geometry}
-          material={materials.Broccoli}
+          material={materials['Broccoli.001']}
           position={[-0.217, 0.913, -0.073]}
           rotation={[0, 1.225, 1.153]}
           scale={0.394}
@@ -941,7 +937,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Cut_Yellow_Peach.geometry}
-          material={materials['Cut Yellow Peach']}
+          material={materials['Cut Yellow Peach.001']}
           position={[-0.198, 1.1, 0.04]}
           rotation={[0, 0.474, 0]}
           scale={0.97}
@@ -951,7 +947,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Red_Bell_Pepper001.geometry}
-          material={materials['Red Bell Pepper.001']}
+          material={materials['Red Bell Pepper.003']}
           position={[-0.106, 0.914, 0.003]}
           scale={0.808}
         />
@@ -960,7 +956,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Red_Bell_Pepper002.geometry}
-          material={materials['Red Bell Pepper.001']}
+          material={materials['Red Bell Pepper.003']}
           position={[-0.157, 0.914, 0]}
           rotation={[Math.PI, -0.917, Math.PI]}
           scale={0.808}
@@ -970,7 +966,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.bottle001.geometry}
-          material={materials.milka}
+          material={materials['milka.001']}
           position={[-0.129, 1.3, -0.008]}
           rotation={[0, -1.393, 0]}
           scale={0.022}
@@ -980,7 +976,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
             castShadow
             receiveShadow
             geometry={nodes.milk001.geometry}
-            material={materials.milk}
+            material={materials['milk.005']}
             position={[0, -1.016, 0]}
             scale={1.001}
           />
@@ -990,7 +986,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Can_415g.geometry}
-          material={materials.Can_415g}
+          material={materials['Can_415g.001']}
           position={[-0.297, 1.238, 0]}
           scale={0.9}
         />
@@ -999,7 +995,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Ricechicken.geometry}
-          material={materials.SimplygonMaterial_2SG}
+          material={materials['SimplygonMaterial_2SG.001']}
           position={[0.245, 1.236, -0.071]}
           rotation={[Math.PI / 2, 0, 1.164]}
           scale={0.1}
@@ -1009,7 +1005,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Carrot.geometry}
-          material={materials.Carrot}
+          material={materials['Carrot.001']}
           position={[0.25, 0.886, -0.034]}
           rotation={[-Math.PI, 0.547, -Math.PI]}
         />
@@ -1018,7 +1014,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Carrot001.geometry}
-          material={materials.Carrot}
+          material={materials['Carrot.001']}
           position={[0.215, 0.886, -0.034]}
           rotation={[-Math.PI, 0.258, -Math.PI]}
           scale={0.788}
@@ -1028,7 +1024,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Carrot002.geometry}
-          material={materials.Carrot}
+          material={materials['Carrot.001']}
           position={[0.231, 0.886, -0.034]}
           rotation={[-Math.PI, 0.462, -Math.PI]}
           scale={1.078}
@@ -1038,7 +1034,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Carrot003.geometry}
-          material={materials.Carrot}
+          material={materials['Carrot.001']}
           position={[0.27, 0.886, -0.034]}
           rotation={[-Math.PI, 0.547, -Math.PI]}
         />
@@ -1047,7 +1043,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.cheese_piece_low001_cheese_piece_low002.geometry}
-          material={materials['Material.007']}
+          material={materials['Material.035']}
           position={[0.083, 1.263, 0.033]}
           rotation={[Math.PI / 2, 0, -2.196]}
           scale={0.108}
@@ -1057,7 +1053,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Red_Bell_Pepper003.geometry}
-          material={materials['Red Bell Pepper']}
+          material={materials['Red Bell Pepper.002']}
           position={[-0.16, 0.782, 0.019]}
           rotation={[Math.PI, -1.454, Math.PI]}
           scale={0.894}
@@ -1067,7 +1063,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Mandarin_Orange.geometry}
-          material={materials['Mandarin.001']}
+          material={materials['Mandarin.003']}
           position={[0.14, 0.901, -0.02]}
           scale={0.859}
         />
@@ -1076,7 +1072,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Mandarin_Orange001.geometry}
-          material={materials['Mandarin.001']}
+          material={materials['Mandarin.003']}
           position={[0.109, 0.901, -0.078]}
           scale={0.859}
         />
@@ -1085,7 +1081,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Mandarin_Orange002.geometry}
-          material={materials['Mandarin.001']}
+          material={materials['Mandarin.003']}
           position={[0.17, 0.901, -0.072]}
           scale={0.724}
         />
@@ -1094,7 +1090,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Mandarin_Orange003.geometry}
-          material={materials['Mandarin.001']}
+          material={materials['Mandarin.003']}
           position={[0.15, 0.929, -0.072]}
           rotation={[0.32, 0.117, 0.427]}
           scale={0.724}
@@ -1104,7 +1100,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Model.geometry}
-          material={materials.material0}
+          material={materials['material0.001']}
           position={[-0.132, 1.461, -0.057]}
           rotation={[-0.003, 0.09, -1.82]}
           scale={0.127}
@@ -1114,7 +1110,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Apple001.geometry}
-          material={materials.Apple}
+          material={materials['Apple.002']}
           position={[-0.19, 1.101, -0.067]}
           rotation={[-Math.PI, 0.077, -Math.PI]}
           scale={0.015}
@@ -1124,7 +1120,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.bottle004.geometry}
-          material={materials.milka}
+          material={materials['milka.001']}
           position={[-0.091, 1.3, -0.044]}
           rotation={[0, -1.393, 0]}
           scale={0.022}
@@ -1134,7 +1130,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
             castShadow
             receiveShadow
             geometry={nodes.milk004.geometry}
-            material={materials.milk}
+            material={materials['milk.005']}
             position={[0, -1.885, 0]}
             scale={[1.001, 0.552, 1.001]}
           />
@@ -1144,7 +1140,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Cabbage.geometry}
-          material={materials.Cabbage}
+          material={materials['Cabbage.001']}
           position={[-0.117, 0.936, -0.084]}
         />
         <mesh
@@ -1152,7 +1148,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Plane001.geometry}
-          material={materials['Material.022']}
+          material={materials['Material.036']}
           position={[0.002, 1.336, -0.273]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={[0.047, 0.047, 0.063]}
@@ -1162,7 +1158,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.polySurface26001.geometry}
-          material={materials['Material.025']}
+          material={materials['Material.037']}
           position={[0.192, 1.113, -0.1]}
           rotation={[Math.PI / 2, 0, -Math.PI / 4]}
           scale={0}
@@ -1172,7 +1168,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Apple002.geometry}
-          material={materials['Apple.001']}
+          material={materials['Apple.003']}
           position={[-0.119, 1.101, -0.07]}
           rotation={[1.974, 0.897, -1.527]}
           scale={0.016}
@@ -1184,25 +1180,25 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           scale={0.227}
         >
           <mesh
-            name="Cylinder006"
+            name="Cylinder011"
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder006.geometry}
-            material={materials.LID}
+            geometry={nodes.Cylinder011.geometry}
+            material={materials['LID.001']}
           />
           <mesh
-            name="Cylinder006_1"
+            name="Cylinder011_1"
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder006_1.geometry}
-            material={materials['glass.001']}
+            geometry={nodes.Cylinder011_1.geometry}
+            material={materials['glass.003']}
           />
           <mesh
-            name="Cylinder006_2"
+            name="Cylinder011_2"
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder006_2.geometry}
-            material={materials[' CORN GRAIN']}
+            geometry={nodes.Cylinder011_2.geometry}
+            material={materials[' CORN GRAIN.002']}
           />
         </group>
         <mesh
@@ -1210,7 +1206,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.KuimiBeerCan.geometry}
-          material={materials.KuimiBeerCan}
+          material={materials['KuimiBeerCan.001']}
           position={[0.136, 1.447, 0]}
           scale={0.8}
         />
@@ -1219,7 +1215,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Sphere004.geometry}
-          material={materials['Material.026']}
+          material={materials['Material.038']}
           position={[0.247, 1.26, -0.067]}
           rotation={[0, 0.411, 0]}
           scale={[0.071, 0.037, 0.138]}
@@ -1231,25 +1227,25 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           scale={0.227}
         >
           <mesh
-            name="Cylinder007"
+            name="Cylinder012"
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder007.geometry}
-            material={materials.LID}
+            geometry={nodes.Cylinder012.geometry}
+            material={materials['LID.001']}
           />
           <mesh
-            name="Cylinder007_1"
+            name="Cylinder012_1"
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder007_1.geometry}
-            material={materials['glass.001']}
+            geometry={nodes.Cylinder012_1.geometry}
+            material={materials['glass.003']}
           />
           <mesh
-            name="Cylinder007_2"
+            name="Cylinder012_2"
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder007_2.geometry}
-            material={materials[' CORN GRAIN.001']}
+            geometry={nodes.Cylinder012_2.geometry}
+            material={materials[' CORN GRAIN.003']}
           />
         </group>
         <mesh
@@ -1257,7 +1253,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Decorative_Gourd.geometry}
-          material={materials['Decorative Gourd']}
+          material={materials['Decorative Gourd.002']}
           position={[0.103, 0.937, -0.055]}
           rotation={[0.052, 0, -0.362]}
         />
@@ -1266,7 +1262,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Red_Bell_Pepper004.geometry}
-          material={materials['Red Bell Pepper.001']}
+          material={materials['Red Bell Pepper.003']}
           position={[-0.217, 0.922, 0.003]}
           rotation={[0.01, 0.013, -0.105]}
           scale={[0.808, 0.915, 0.808]}
@@ -1276,7 +1272,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Red_Pepper.geometry}
-          material={materials['Red Pepper']}
+          material={materials['Red Pepper.001']}
           position={[-0.268, 0.894, -0.02]}
           rotation={[0, -0.358, -Math.PI / 2]}
         />
@@ -1285,7 +1281,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Red_Pepper001.geometry}
-          material={materials['Red Pepper']}
+          material={materials['Red Pepper.001']}
           position={[-0.268, 0.894, 0.013]}
           rotation={[0, -0.646, -Math.PI / 2]}
         />
@@ -1294,7 +1290,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Red_Pepper002.geometry}
-          material={materials['Red Pepper']}
+          material={materials['Red Pepper.001']}
           position={[-0.268, 0.91, -0.004]}
           rotation={[0.471, 0.906, -Math.PI / 2]}
         />
@@ -1303,7 +1299,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Broccoli002.geometry}
-          material={materials.Broccoli}
+          material={materials['Broccoli.001']}
           position={[0.208, 0.764, 0.017]}
           rotation={[-3.089, -1.225, -2.1]}
           scale={0.657}
@@ -1313,7 +1309,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Mandarin_Orange004.geometry}
-          material={materials['Mandarin.002']}
+          material={materials['Mandarin.004']}
           position={[0.128, 0.758, 0.087]}
           rotation={[0.32, 0.117, 0.427]}
           scale={0.724}
@@ -1323,7 +1319,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Mandarin_Orange005.geometry}
-          material={materials['Mandarin.002']}
+          material={materials['Mandarin.004']}
           position={[0.128, 0.755, 0.031]}
           rotation={[3.018, 1.535, -3.011]}
           scale={0.724}
@@ -1333,7 +1329,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Mandarin_Orange006.geometry}
-          material={materials['Mandarin.002']}
+          material={materials['Mandarin.004']}
           position={[0.083, 0.755, 0.079]}
           rotation={[3.137, 0.14, -3.134]}
           scale={0.724}
@@ -1343,7 +1339,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Carrot004.geometry}
-          material={materials.Carrot}
+          material={materials['Carrot.001']}
           position={[0.201, 0.894, -0.034]}
           rotation={[-2.93, 0.684, -3.061]}
           scale={0.853}
@@ -1353,7 +1349,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Decorative_Gourd001.geometry}
-          material={materials['Decorative Gourd.001']}
+          material={materials['Decorative Gourd.003']}
           position={[0.325, 0.925, -0.055]}
           rotation={[-2.357, 0.647, 1.641]}
         />
@@ -1362,7 +1358,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Apple003.geometry}
-          material={materials.Apple}
+          material={materials['Apple.002']}
           position={[-0.228, 1.101, -0.107]}
           rotation={[-Math.PI, 0.077, -Math.PI]}
           scale={0.015}
@@ -1372,7 +1368,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Nuts.geometry}
-          material={materials['Nut_material.002']}
+          material={materials['Nut_material.001']}
           position={[-0.304, 1.067, -0.023]}
           rotation={[-0.644, 0.005, 0.642]}
           scale={0.005}
@@ -1382,7 +1378,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Bowl.geometry}
-          material={materials.Glass}
+          material={materials['Glass.001']}
           position={[-0.304, 1.067, -0.023]}
           scale={0.005}
         />
@@ -1391,7 +1387,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Cut_Yellow_Peach001.geometry}
-          material={materials['Cut Yellow Peach']}
+          material={materials['Cut Yellow Peach.001']}
           position={[-0.084, 1.1, 0.024]}
           rotation={[-1.509, 0.032, 0.473]}
           scale={0.97}
@@ -1401,7 +1397,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Red_Pepper003.geometry}
-          material={materials['Red Pepper']}
+          material={materials['Red Pepper.001']}
           position={[-0.119, 0.741, 0.091]}
           rotation={[0, -0.646, -Math.PI / 2]}
         />
@@ -1410,7 +1406,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Plane003001.geometry}
-          material={materials['Material #28']}
+          material={materials['Material #28.001']}
           position={[-0.003, 0.772, -0.001]}
           scale={0.001}
         />
@@ -1419,7 +1415,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Plane002001.geometry}
-          material={materials['Acrylic Transparent Clear']}
+          material={materials['Acrylic Transparent Clear.001']}
           position={[0.005, 0.77, 0]}
           rotation={[0, 1.571, 0]}
           scale={0.001}
@@ -1429,7 +1425,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Capsule004001.geometry}
-          material={materials['Material #25']}
+          material={materials['Material #25.001']}
           position={[-0.001, 0.752, -0.048]}
           rotation={[-Math.PI / 2, 1.288, -Math.PI]}
           scale={0.001}
@@ -1439,7 +1435,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Capsule003001.geometry}
-          material={materials['Material #25']}
+          material={materials['Material #25.001']}
           position={[0.027, 0.752, -0.048]}
           rotation={[Math.PI / 2, -0.746, 0]}
           scale={0.001}
@@ -1449,7 +1445,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Capsule002001.geometry}
-          material={materials['Material #25']}
+          material={materials['Material #25.001']}
           position={[0.055, 0.752, -0.048]}
           rotation={[-1.571, 1.476, 3.142]}
           scale={0.001}
@@ -1459,7 +1455,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Box001001.geometry}
-          material={materials['PVC White Matte Rough']}
+          material={materials['PVC White Matte Rough.001']}
           position={[-0.001, 0.734, -0.001]}
           rotation={[0, 1.571, 0]}
           scale={0.001}
@@ -1469,7 +1465,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.KuimiBeerCan001.geometry}
-          material={materials.KuimiBeerCan}
+          material={materials['KuimiBeerCan.001']}
           position={[0.136, 1.447, -0.052]}
           scale={0.8}
         />
