@@ -25,7 +25,6 @@ import { useAppContext } from 'src/context/AppProvider';
 
 const ARScene: React.FC = (): JSX.Element => {
   const [modelPosition, setModelPosition] = useState<Vector3 | null>(null);
-  const [showPresentation, setShowPresentation] = useState(false);
   const reticleRef = useRef<Mesh>(null);
   const orbitRef = useRef<OrbitControlsImpl>(null);
   const cameraRef = useRef<PerspectiveCameraImpl>(null);
@@ -33,9 +32,7 @@ const ARScene: React.FC = (): JSX.Element => {
   const { isPresenting } = useXR();
 
   useEffect(() => {
-    console.log('showPresentation', showPresentation);
     setARMode(isPresenting);
-    setShowPresentation(isPresenting);
   }, [isPresenting]);
 
   useHitTest((hitMatrix: Matrix4) => {
