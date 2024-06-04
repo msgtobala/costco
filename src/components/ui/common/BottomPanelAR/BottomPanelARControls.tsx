@@ -9,10 +9,10 @@ const BottomPanelsARControls: React.FC<{
   return (
     <BottomPanelsARControlsWrapper>
       <ReactSlider slidesToScroll={1} slidesToShow={3}>
-        <button onClick={() => onButtonClicked(1)}>Open doors</button>
-        <button onClick={() => onButtonClicked(0)}>Close doors</button>
-        <button onClick={() => onButtonClicked(3)}>Open Freezer</button>
-        <button onClick={() => onButtonClicked(2)}>Close Freezer</button>
+        <span onClick={() => onButtonClicked(1)}>Open doors</span>
+        <span onClick={() => onButtonClicked(0)}>Close doors</span>
+        <span onClick={() => onButtonClicked(3)}>Open Freezer</span>
+        <span onClick={() => onButtonClicked(2)}>Close Freezer</span>
       </ReactSlider>
     </BottomPanelsARControlsWrapper>
   );

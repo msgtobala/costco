@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const TabSwitcherStyled = styled.div`
   display: flex;
-  height: 29px;
+  height: 32px;
   width: 75%;
   margin: auto;
   border: 1px solid #fff;
@@ -22,12 +22,14 @@ export const TabStyled = styled.button<{ $isActive: boolean }>`
   line-height: 14.5px;
   background-color: #fff;
   color: ${({ $isActive }) => ($isActive ? '#033e6a' : '#033e6a60')};
+  & span {
+    padding: 7px 18px;
+  }
   ${({ $isActive }) =>
     $isActive &&
     css`
       span {
-        padding: 7px 18px;
-        border-bottom: 1px solid #0079d5;
+        border-bottom: 2px solid #0079d5;
       }
     `}
 `;

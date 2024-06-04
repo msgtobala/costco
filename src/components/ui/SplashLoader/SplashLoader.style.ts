@@ -29,6 +29,7 @@ export const SplashContainer = styled.div<{ $progress: number }>`
         `
       : 'none'};
   animation-delay: ${(props) => (props.$progress === 100 ? '0.5s' : 'none')};
+  z-index: 5;
 `;
 
 export const SplashLoaderWrapper = styled.div`

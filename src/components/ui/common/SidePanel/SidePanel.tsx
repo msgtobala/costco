@@ -10,6 +10,8 @@ import {
   SelectedOption,
   OptionsPanelImage,
   OptionsPanelIcon,
+  SelectedOptionEnv,
+  SidePanelOptionEnv,
 } from 'src/components/ui/common/SidePanel/SidePanel.style';
 import { useAppContext } from 'src/context/AppProvider';
 import { useNavigate } from 'react-router-dom';
@@ -23,7 +25,10 @@ const icons = [
   {
     name: 'Environment',
     src: images.common.Environment,
-    background: [images.common.Hall, images.common.Kitchen],
+    background: [
+      { img: images.common.Room, name: 'Living room' },
+      { img: images.common.Kitchen, name: 'Kitchen' },
+    ],
   },
   {
     name: 'Measurement',
@@ -107,21 +112,30 @@ const SidePanel: React.FC = (): JSX.Element => {
           </SidePanelOption>
         )}
         {selectedIcon === 'Environment' && (
-          <SidePanelOption>
+          <SidePanelOptionEnv>
             {icons
               .find((icon) => icon.name === 'Environment')
               ?.background?.map((image, index) => {
                 return (
-                  <SelectedOption
-                    key={image + index}
+                  <SelectedOptionEnv
+                    key={image.name}
                     onClick={() => onSelectOption(index)}
                     $selected={index === selectedOption}
                   >
-                    <OptionsPanelImage key={image} $bgImg={image} />
-                  </SelectedOption>
+                    <p
+                      style={{
+                        marginRight: '10px',
+                        color: 'white',
+                        fontWeight: '400',
+                      }}
+                    >
+                      {image.name}
+                    </p>
+                    <OptionsPanelImage key={image.name} $bgImg={image.img} />
+                  </SelectedOptionEnv>
                 );
               })}
-          </SidePanelOption>
+          </SidePanelOptionEnv>
         )}
         {selectedIcon === 'Measurement' && (
           <SidePanelOption>

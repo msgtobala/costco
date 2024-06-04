@@ -20,6 +20,7 @@ export const HeaderWrapper = styled.div<{ $showPanels: boolean }>`
   gap: 10px;
   width: 100%;
   padding: 20px;
+  z-index: 2;
   ${(props) =>
     props.$showPanels &&
     css`

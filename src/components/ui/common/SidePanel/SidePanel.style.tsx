@@ -23,6 +23,7 @@ const sidePanelSlideOut = keyframes`
 `;
 
 export const SidePanelWrapper = styled.div<{ $showPanels: boolean }>`
+  z-index: 2;
   border-radius: 4px;
   position: absolute;
   top: 75px;
@@ -74,6 +75,17 @@ export const SidePanelOption = styled.div`
   height: 100px;
 `;
 
+export const SidePanelOptionEnv = styled(SidePanelOption)`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: absolute;
+  top: 50%;
+  left: -130px;
+  transform: translate(0px, -50%);
+  height: 100px;
+`;
+
 export const SelectedOption = styled.div<{ $selected: boolean }>`
   display: flex;
   justify-content: center;
@@ -83,6 +95,20 @@ export const SelectedOption = styled.div<{ $selected: boolean }>`
   height: 28px;
   border: ${(props) =>
     props.$selected ? '2px solid #005DA4' : '2px solid transparent'};
+`;
+
+export const SelectedOptionEnv = styled.div<{ $selected: boolean }>`
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  border-radius: 50%;
+  height: auto;
+  width: 120px;
+
+  & img {
+    border: ${(props) =>
+      props.$selected ? '2px solid #005DA4' : '2px solid transparent'};
+  }
 `;
 
 export const OptionsPanel = styled.div<{ $color: string }>`

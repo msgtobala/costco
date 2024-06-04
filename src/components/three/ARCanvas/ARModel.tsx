@@ -95,7 +95,7 @@ const ARModel: React.FC<{ position?: Vector3; scale?: number }> = (props) => {
       ref={group}
       {...props}
       dispose={null}
-      scale={isPresenting ? [0.2, 0.2, 0.2] : [1, 1, 1]}
+      scale={isPresenting ? [1, 1, 1] : [1, 1, 1]}
     >
       {/* <DimensionLines
         dimensions={{

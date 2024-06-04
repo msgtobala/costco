@@ -12,6 +12,7 @@ import {
 const useModelAnimations = (props: {
   mixer: AnimationMixer;
   animations: AnimationClip[];
+  names: string[];
 }) => {
   const { mixer } = props;
   const { animationIndex, animationActions } = useAppContext();
@@ -34,49 +35,43 @@ const useModelAnimations = (props: {
     }
   }, [animationActions]);
 
-  mixer.addEventListener('finished', () => {
-    console.log('fin');
-  });
-
   useEffect(() => {
     if (animationIndex !== null) {
-      // close door
-      if (animationIndex === 0) {
-        const closedoorR = animationActions['closedoorR'] as AnimationAction;
-        const doorcloseL = animationActions['doorcloseL'] as AnimationAction;
-        closedoorR.clampWhenFinished = false;
-        doorcloseL.clampWhenFinished = false;
-        closedoorR.reset().setLoop(LoopOnce, 1).play();
-        doorcloseL.reset().setLoop(LoopOnce, 1).play();
-        closedoorR.clampWhenFinished = true;
-        doorcloseL.clampWhenFinished = true;
-      }
-
+      mixer.stopAllAction();
       // open door
       if (animationIndex === 1) {
-        mixer.stopAllAction();
         const opendoorR = animationActions['opendoorR'] as AnimationAction;
         const opendoorL = animationActions['opendoorL'] as AnimationAction;
-        opendoorR.reset().setLoop(LoopOnce, 1).play();
-        opendoorL.reset().setLoop(LoopOnce, 1).play();
-        opendoorL.clampWhenFinished = true;
-        opendoorR.clampWhenFinished = true;
+        opendoorR.time = 0;
+        opendoorL.time = 0;
+        opendoorR.setDuration(5);
+        opendoorL.setDuration(5);
+        opendoorR.reset().halt(1.7).setLoop(LoopOnce, 1).play();
+        opendoorL.reset().halt(1.7).setLoop(LoopOnce, 1).play();
+      }
+      if (animationIndex === 0) {
+        const closedoorR = animationActions['opendoorR'] as AnimationAction;
+        const closedoorL = animationActions['opendoorL'] as AnimationAction;
+        closedoorR.time = 1;
+        closedoorL.time = 1;
+        closedoorR.setDuration(5);
+        closedoorL.setDuration(5);
+        closedoorR.setLoop(LoopOnce, 1).play();
+        closedoorL.setLoop(LoopOnce, 1).play();
       }
 
-      // close freezer
-      if (animationIndex === 2) {
-        const freezerclose = animationActions[
-          'freezerclose'
-        ] as AnimationAction;
-        freezerclose.reset().setLoop(LoopOnce, 1).play();
-        freezerclose.clampWhenFinished = true;
-      }
-
-      // open freezer
       if (animationIndex === 3) {
         const freezeropen = animationActions['freezeropen'] as AnimationAction;
-        freezeropen.reset().setLoop(LoopOnce, 1).play();
-        freezeropen.clampWhenFinished = true;
+        freezeropen.time = 0;
+        freezeropen.setDuration(5);
+        freezeropen.halt(1.7).setLoop(LoopOnce, 1).play();
+      }
+
+      if (animationIndex === 2) {
+        const freezeropen = animationActions['freezeropen'] as AnimationAction;
+        freezeropen.time = 1;
+        freezeropen.setDuration(5);
+        freezeropen.setLoop(LoopOnce, 1).play();
       }
     }
   }, [animationIndex]);

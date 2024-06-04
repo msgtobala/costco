@@ -76,6 +76,25 @@ const useHotSpot = (
         },
         onComplete: () => {
           controlsRef!.current!.enabled = false;
+          if (index === 0) {
+            const freezeropen = animationActions[
+              'freezeropen'
+            ] as AnimationAction;
+            freezeropen.time = 0;
+            freezeropen.setDuration(5);
+            freezeropen.halt(1.7).setLoop(LoopOnce, 1).play();
+          }
+
+          if (index === 1) {
+            const opendoorR = animationActions['opendoorR'] as AnimationAction;
+            const opendoorL = animationActions['opendoorL'] as AnimationAction;
+            opendoorR.time = 0;
+            opendoorL.time = 0;
+            opendoorR.setDuration(5);
+            opendoorL.setDuration(5);
+            opendoorR.reset().halt(1.7).setLoop(LoopOnce, 1).play();
+            opendoorL.reset().halt(1.7).setLoop(LoopOnce, 1).play();
+          }
           setSelectedFeature(null);
           setSelectedHotSpot(index);
         },
@@ -92,20 +111,6 @@ const useHotSpot = (
   }, [exitView]);
 
   useEffect(() => {
-    if (selectedFeature === 0) {
-      const closedoorR = animationActions['closedoorR'] as AnimationAction;
-      closedoorR.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
-      closedoorR.clampWhenFinished = true;
-    } else if (selectedFeature === 1) {
-      const doorcloseL = animationActions['doorcloseL'] as AnimationAction;
-      doorcloseL.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
-      doorcloseL.clampWhenFinished = true;
-    } else if (selectedFeature === 2) {
-      console.log(selectedFeature);
-      const freezerclose = animationActions['freezerclose'] as AnimationAction;
-      freezerclose.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
-      freezerclose.clampWhenFinished = true;
-    }
     if (cameraRef.current && controlsRef.current) {
       setCurrentPositions(
         cameraRef.current.position,

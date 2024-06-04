@@ -10,12 +10,29 @@ import {
   HomeComponentWrapper,
 } from 'src/components/ui/HomeComponent/HomeComponent.style';
 import SplashLoader from 'src/components/ui/SplashLoader/SplashLoader';
+import { useAppContext } from 'src/context/AppProvider';
+import KitchenEnv from 'src/assets/images/kitchen_static.png';
 
 const HomeComponent: React.FC = (): JSX.Element => {
+  const { selectedEnvironment } = useAppContext();
   return (
     <HomeComponentWrapper>
       <Header />
       <SplashLoader />
+      {selectedEnvironment != null && selectedEnvironment >= 0 && (
+        <div
+          style={{
+            width: '100%',
+            height: '100vh',
+            zIndex: 1,
+          }}
+        >
+          <img
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            src={KitchenEnv}
+          />
+        </div>
+      )}
       <CanvasWrapper>
         <CustomCanvas />
       </CanvasWrapper>

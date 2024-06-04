@@ -51,13 +51,15 @@ export const BottomPanelsARControlsWrapper = styled.div`
   padding: 26px 20px 28px 20px;
   background: linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
 
-  & button {
-    color: #033e6a;
-    background-color: #d3dbe3;
+  & span {
+    color: #0079d5;
+    background-color: white;
     padding: 10px;
     border-radius: 4px;
     font-size: 12px;
-    border: 1px solid #033e6a;
+    text-align: center;
+    border: 1.5px solid #0079d5 !important;
+    font-family: 'Inter-SemiBold', sans-serif;
     /* width: 200px !important; */
   }
 `;

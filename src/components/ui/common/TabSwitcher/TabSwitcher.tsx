@@ -7,6 +7,7 @@ import {
   TabStyled,
 } from 'src/components/ui/common/TabSwitcher/TabSwitcher.styled';
 import { useAppContext } from 'src/context/AppProvider';
+import Interactions from './TabContent/Interactions';
 
 const TabSwitcher: React.FC = (): JSX.Element => {
   const [selectedTab, setSelectedTab] = useState('about');
@@ -18,6 +19,8 @@ const TabSwitcher: React.FC = (): JSX.Element => {
         return <About />;
       case 'features':
         return <Features />;
+      case 'interactions':
+        return <Interactions />;
       default:
         return <About />;
     }
@@ -43,6 +46,15 @@ const TabSwitcher: React.FC = (): JSX.Element => {
           $isActive={selectedTab === 'features'}
         >
           <span>FEATURES</span>
+        </TabStyled>
+        <TabStyled
+          onClick={() => {
+            setExitView(false);
+            setSelectedTab('interactions');
+          }}
+          $isActive={selectedTab === 'interactions'}
+        >
+          <span>INTERACTIONS</span>
         </TabStyled>
       </TabSwitcherStyled>
       {getTabContent()}

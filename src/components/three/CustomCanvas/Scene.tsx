@@ -42,6 +42,7 @@ const Scene: React.FC = (): JSX.Element => {
         maxPolarAngle={1.57}
         enablePan
         enableDamping
+        zoomSpeed={0.5}
       />
       <Suspense fallback={<CustomLoader />}>
         <Model />

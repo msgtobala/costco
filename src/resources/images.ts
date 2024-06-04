@@ -7,8 +7,8 @@ import Environment from 'src/assets/icons/environment.svg';
 import Measurement from 'src/assets/icons/measurement.svg';
 import AR from 'src/assets/icons/ar.svg';
 import Share from 'src/assets/icons/share.svg';
-import Hall from 'src/assets/images/hall.png';
-import Kitchen from 'src/assets/images/kitchen.png';
+import Room from 'src/assets/images/room_white.svg';
+import Kitchen from 'src/assets/images/kitchen_white.svg';
 import Door from 'src/assets/icons/door.svg';
 import Chicken from 'src/assets/icons/chicken.svg';
 import Pizza from 'src/assets/icons/pizza.svg';
@@ -24,7 +24,7 @@ const common = {
   Measurement,
   AR,
   Share,
-  Hall,
+  Room,
   Kitchen,
   Door,
   Chicken,
