@@ -1,6 +1,10 @@
 import React, { useRef, useState } from 'react';
 
-import { ContactShadows, OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import {
+  ContactShadows,
+  OrbitControls,
+  PerspectiveCamera,
+} from '@react-three/drei';
 import {
   Matrix4,
   Vector3,
@@ -47,7 +51,7 @@ const ARScene: React.FC = (): JSX.Element => {
     <>
       <OrbitControls ref={orbitRef} target={[0.1, 0.83, 0.31]} />
       <CustomEnvironment />
-      <ContactShadows smooth opacity={0.8} />
+      {!isPresenting && <ContactShadows smooth opacity={0.8} />}
       {isPresenting && modelPosition && (
         <ARModel position={modelPosition} key="ar-model" />
       )}
