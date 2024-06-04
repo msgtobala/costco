@@ -33,7 +33,7 @@ const ARScene: React.FC = (): JSX.Element => {
   const { isPresenting } = useXR();
 
   useEffect(() => {
-    console.log('isPresenting', isPresenting);
+    console.log('showPresentation', showPresentation);
     setARMode(isPresenting);
     setShowPresentation(isPresenting);
   }, [isPresenting]);
