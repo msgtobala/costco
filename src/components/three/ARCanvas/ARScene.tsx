@@ -28,13 +28,7 @@ const ARScene: React.FC = (): JSX.Element => {
   const reticleRef = useRef<Mesh>(null);
   const orbitRef = useRef<OrbitControlsImpl>(null);
   const cameraRef = useRef<PerspectiveCameraImpl>(null);
-  const { setARMode } = useAppContext();
   const { isPresenting } = useXR();
-
-  useEffect(() => {
-    setARMode(isPresenting);
-  }, [isPresenting]);
-
   useHitTest((hitMatrix: Matrix4) => {
     if (reticleRef.current) {
       hitMatrix.decompose(
@@ -55,28 +49,21 @@ const ARScene: React.FC = (): JSX.Element => {
 
   return (
     <>
-      <OrbitControls
-        ref={orbitRef}
-        target={[0.1, 0.83, 0.31]}
-        minDistance={0.1}
-        maxDistance={20}
-        minAzimuthAngle={0}
-        minPolarAngle={0}
-        maxPolarAngle={1.57}
-        enablePan
-        enableDamping
-      />
-      <CustomEnvironment />
-      <ContactShadows smooth opacity={0.8} />
+      <OrbitControls ref={orbitRef} target={[0.1, 0.83, 0.31]} />
+      <ambientLight intensity={10} />
+      {/* <CustomEnvironment /> */}
+      {/* <ContactShadows smooth opacity={0.8} /> */}
       {isPresenting && modelPosition && (
         <ARModel position={modelPosition} key="ar-model" />
       )}
-      <Interactive onSelect={placeModel}>
-        <mesh ref={reticleRef} rotation-x={-Math.PI / 2}>
-          <ringGeometry args={[0.1, 0.25, 32]} />
-          <meshStandardMaterial color="white" />
-        </mesh>
-      </Interactive>
+      {isPresenting && (
+        <Interactive onSelect={placeModel}>
+          <mesh ref={reticleRef} rotation-x={-Math.PI / 2}>
+            <ringGeometry args={[0.1, 0.25, 32]} />
+            <meshStandardMaterial color="white" />
+          </mesh>
+        </Interactive>
+      )}
       {!isPresenting && (
         <ARModel position={new Vector3(0, 0, 0)} key="interaction-model" />
       )}
