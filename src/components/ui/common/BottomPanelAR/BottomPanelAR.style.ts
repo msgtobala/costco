@@ -48,7 +48,7 @@ export const BottomPanelsARControlsWrapper = styled.div`
   border: 1px solid #fff;
   border-radius: 10px 10px 0 0;
   background-color: #fff;
-  padding: 26px 20px 28px 20px;
+  padding: 20px 0;
   background: linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
 
   & span {
