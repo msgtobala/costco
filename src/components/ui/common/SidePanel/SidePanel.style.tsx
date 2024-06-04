@@ -34,6 +34,7 @@ export const SidePanelWrapper = styled.div<{ $showPanels: boolean }>`
   animation: ${(props) =>
       props.$showPanels ? sidePanelSlideIn : sidePanelSlideOut}
     1s ease-in-out forwards;
+  animation-delay: 0.75s;
 `;
 
 export const SidePanelButton = styled.button<{ $selected?: boolean }>`

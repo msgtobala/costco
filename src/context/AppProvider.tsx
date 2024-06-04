@@ -3,6 +3,7 @@ import React, { createContext, useContext, useMemo, useState } from 'react';
 import AppProviderType, {
   IAppProviderProps,
 } from 'src/models/context/AppProvider.type';
+import { AnimationAction } from 'three';
 
 const AppContext = createContext({} as AppProviderType);
 
@@ -21,6 +22,12 @@ const AppProvider: React.FC<IAppProviderProps> = ({
   const [selectedHotSpot, setSelectedHotSpot] = useState<number | null>(null);
   const [exitView, setExitView] = useState<boolean>(false);
   const [showPanels, setShowPanels] = useState<boolean>(false);
+  const [animationActions, setAnimationActions] = useState<{
+    [x: string]: AnimationAction | null;
+  }>({});
+  const [rightDoorOpen, setRightDoorOpen] = useState<boolean>(false);
+  const [leftDoorOpen, setLeftDoorOpen] = useState<boolean>(false);
+  const [freezerOpen, setFreezerOpen] = useState<boolean>(false);
 
   const value = useMemo(() => {
     return {
@@ -32,6 +39,10 @@ const AppProvider: React.FC<IAppProviderProps> = ({
       selectedHotSpot,
       exitView,
       showPanels,
+      animationActions,
+      rightDoorOpen,
+      leftDoorOpen,
+      freezerOpen,
       setAnimations,
       setAnimationIndex,
       setSelectedEnvironment,
@@ -40,6 +51,10 @@ const AppProvider: React.FC<IAppProviderProps> = ({
       setSelectedHotSpot,
       setExitView,
       setShowPanels,
+      setAnimationActions,
+      setRightDoorOpen,
+      setLeftDoorOpen,
+      setFreezerOpen,
     } as AppProviderType;
   }, [
     animations,
@@ -50,6 +65,7 @@ const AppProvider: React.FC<IAppProviderProps> = ({
     selectedHotSpot,
     exitView,
     showPanels,
+    animationActions,
   ]);
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

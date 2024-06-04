@@ -50,6 +50,7 @@ const SidePanel: React.FC = (): JSX.Element => {
   const [selectedOption, setSelectedOption] = useState<number | null>(0);
   const { setSelectedEnvironment } = useAppContext();
   const navigate = useNavigate();
+  const { showPanels } = useAppContext();
 
   const onSelectIcon = (iconName: string) => {
     setSelectedIcon(iconName);
@@ -77,7 +78,7 @@ const SidePanel: React.FC = (): JSX.Element => {
   };
 
   return (
-    <SidePanelWrapper $showPanels>
+    <SidePanelWrapper $showPanels={showPanels}>
       <SidePanelOptions>
         {icons.map((icon) => (
           <SidePanelButton

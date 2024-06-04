@@ -13,7 +13,7 @@ export const SplashContainer = styled.div<{ $progress: number }>`
   left: 0;
   top: 0;
   width: 100vw;
-  height: 100dvh;
+  height: 100vh;
   z-index: 2;
   background: rgb(191, 197, 203);
   background: linear-gradient(

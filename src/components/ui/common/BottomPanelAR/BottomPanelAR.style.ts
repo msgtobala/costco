@@ -33,7 +33,6 @@ export const BottomPanelWrapper = styled.div<{ $showPanels: boolean }>`
   transform: translateY(100%);
   animation: ${(props) => (props.$showPanels ? footerSlideIn : footerSlideOut)}
     1s ease-in-out forwards;
-  z-index: 9999999999999999999999999999999;
 `;
 
 export const PanelWrapper = styled.div`
@@ -41,10 +40,10 @@ export const PanelWrapper = styled.div`
 `;
 
 export const BottomPanelsARControlsWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* gap: 20px; */
   box-sizing: border-box;
   border: 1px solid #fff;
   border-radius: 10px 10px 0 0;
@@ -59,5 +58,6 @@ export const BottomPanelsARControlsWrapper = styled.div`
     border-radius: 4px;
     font-size: 12px;
     border: 1px solid #033e6a;
+    /* width: 200px !important; */
   }
 `;

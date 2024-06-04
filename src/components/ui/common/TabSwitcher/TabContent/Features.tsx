@@ -22,25 +22,25 @@ const Features: React.FC = (): JSX.Element => {
         <FeatureIcon>
           <img src={images.common.FeatureIcon} alt="feature-icon" />
         </FeatureIcon>
-        <FeatureDescription>Grip Easy Handles</FeatureDescription>
+        <FeatureDescription>Ice maker</FeatureDescription>
       </FeatureWrapper>
       <FeatureWrapper onClick={() => startAnimation(1)}>
         <FeatureIcon>
           <img src={images.common.FeatureIcon} alt="feature-icon" />
         </FeatureIcon>
-        <FeatureDescription>Energy Star Certified</FeatureDescription>
+        <FeatureDescription>Veggies Shelf</FeatureDescription>
       </FeatureWrapper>
-      <FeatureWrapper>
+      <FeatureWrapper onClick={() => startAnimation(2)}>
         <FeatureIcon>
           <img src={images.common.FeatureIcon} alt="feature-icon" />
         </FeatureIcon>
-        <FeatureDescription>Flatbead freezer compartment</FeatureDescription>
+        <FeatureDescription>Milk Chiler</FeatureDescription>
       </FeatureWrapper>
-      <FeatureWrapper>
+      <FeatureWrapper onClick={() => startAnimation(3)}>
         <FeatureIcon>
           <img src={images.common.FeatureIcon} alt="feature-icon" />
         </FeatureIcon>
-        <FeatureDescription>Dual- Dispense AutoFill Pitcher</FeatureDescription>
+        <FeatureDescription>Adjustable Shelves</FeatureDescription>
       </FeatureWrapper>
     </TabContentWrapper>
   );

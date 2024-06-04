@@ -25,7 +25,7 @@ export const BottomPanelWrapper = styled.div<{ $showPanels: boolean }>`
   transform: translateY(100%);
   animation: ${(props) => (props.$showPanels ? footerSlideIn : footerSlideOut)}
     1s ease-in-out forwards;
-  z-index: 9999999999999999999999999999999;
+  animation-delay: 0.75s;
 `;
 
 export const PanelWrapper = styled.div`

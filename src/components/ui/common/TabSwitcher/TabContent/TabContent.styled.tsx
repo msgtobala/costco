@@ -16,7 +16,6 @@ export const TabContentWrapper = styled.div<{ $noBorder?: boolean }>`
   }
 
   > div:nth-child(2) {
-    margin-left: 20px;
   }
 
   :last-child {

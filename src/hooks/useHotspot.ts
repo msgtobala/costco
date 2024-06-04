@@ -1,7 +1,7 @@
 import { RefObject, useEffect, useState } from 'react';
 
 import { Camera, useFrame } from '@react-three/fiber';
-import { PerspectiveCamera, Vector3 } from 'three';
+import { AnimationAction, LoopOnce, PerspectiveCamera, Vector3 } from 'three';
 import type { OrbitControls } from 'three-stdlib';
 import { useAppContext } from 'src/context/AppProvider';
 import {
@@ -16,8 +16,13 @@ const useHotSpot = (
   controlsRef: RefObject<OrbitControls>,
   threeCamera: Camera,
 ) => {
-  const { selectedFeature, exitView, setSelectedFeature, setSelectedHotSpot } =
-    useAppContext();
+  const {
+    selectedFeature,
+    exitView,
+    animationActions,
+    setSelectedFeature,
+    setSelectedHotSpot,
+  } = useAppContext();
 
   const [initialTargetPosition, setInitialTargetPosition] =
     useState<PositionVector>();
@@ -87,39 +92,84 @@ const useHotSpot = (
   }, [exitView]);
 
   useEffect(() => {
+    if (selectedFeature === 0) {
+      const closedoorR = animationActions['closedoorR'] as AnimationAction;
+      closedoorR.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
+      closedoorR.clampWhenFinished = true;
+    } else if (selectedFeature === 1) {
+      const doorcloseL = animationActions['doorcloseL'] as AnimationAction;
+      doorcloseL.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
+      doorcloseL.clampWhenFinished = true;
+    } else if (selectedFeature === 2) {
+      console.log(selectedFeature);
+      const freezerclose = animationActions['freezerclose'] as AnimationAction;
+      freezerclose.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
+      freezerclose.clampWhenFinished = true;
+    }
+    if (cameraRef.current && controlsRef.current) {
+      setCurrentPositions(
+        cameraRef.current.position,
+        controlsRef.current.target,
+      );
+    }
+  }, []);
+
+  useEffect(() => {
     if (selectedFeature !== null) {
       if (selectedFeature === 0) {
-        if (cameraRef.current && controlsRef.current) {
-          setCurrentPositions(
-            cameraRef.current.position,
-            controlsRef.current.target,
-          );
-        }
         const targetPosition = {
-          x: -4.7297644063785,
-          y: 6.193574284726669,
-          z: 4.993966997579989,
+          x: -0.27,
+          y: 2.48,
+          z: 1.07,
         } as PositionVector;
         const targetLookAt = {
-          x: -0.21879935410496032,
-          y: 4.505940507227479,
-          z: -0.5026646701594244,
+          x: -0.08,
+          y: 0.64,
+          z: 0.603,
         } as PositionVector;
         animateHotSpot(targetPosition, targetLookAt, 0);
       }
 
       if (selectedFeature === 1) {
         const targetPosition = {
-          x: 4.67111511009628,
-          y: 3.7541151360785228,
-          z: 12.346735803727574,
+          x: -0.11,
+          y: 1.09,
+          z: 1.83,
         };
         const targetLookAt = {
-          x: -1.0478027384414645,
-          y: 2.6500552031528173,
-          z: 0.1404902586724124,
+          x: 0.02,
+          y: 0.77,
+          z: 0.32,
         };
         animateHotSpot(targetPosition, targetLookAt, 1);
+      }
+
+      if (selectedFeature === 2) {
+        const targetPosition = {
+          x: -0.17,
+          y: 1.5,
+          z: 1.15,
+        };
+        const targetLookAt = {
+          x: -0.19,
+          y: 1.32,
+          z: 0.19,
+        };
+        animateHotSpot(targetPosition, targetLookAt, 2);
+      }
+
+      if (selectedFeature === 3) {
+        const targetPosition = {
+          x: -0.77,
+          y: 1.32,
+          z: 1.55,
+        };
+        const targetLookAt = {
+          x: 0.48,
+          y: 1.18,
+          z: 0.52,
+        };
+        animateHotSpot(targetPosition, targetLookAt, 3);
       }
     }
   }, [selectedFeature]);
@@ -128,3 +178,18 @@ const useHotSpot = (
 };
 
 export default useHotSpot;
+
+// if (selectedFeature === 0) {
+//   const closedoorR = animationActions['closedoorR'] as AnimationAction;
+//   closedoorR.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
+//   closedoorR.clampWhenFinished = true;
+// } else if (selectedFeature === 1) {
+//   const doorcloseL = animationActions['doorcloseL'] as AnimationAction;
+//   doorcloseL.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
+//   doorcloseL.clampWhenFinished = true;
+// } else if (selectedFeature === 2) {
+//   console.log(selectedFeature);
+//   const freezerclose = animationActions['freezerclose'] as AnimationAction;
+//   freezerclose.reset().setLoop(LoopOnce, 1).fadeIn(0.1).play();
+//   freezerclose.clampWhenFinished = true;
+// }

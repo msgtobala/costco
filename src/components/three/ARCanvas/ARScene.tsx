@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import {
+  ContactShadows,
+  OrbitControls,
+  PerspectiveCamera,
+} from '@react-three/drei';
 import {
   Matrix4,
   Vector3,
@@ -21,6 +25,7 @@ import { useAppContext } from 'src/context/AppProvider';
 
 const ARScene: React.FC = (): JSX.Element => {
   const [modelPosition, setModelPosition] = useState<Vector3 | null>(null);
+  const [showPresentation, setShowPresentation] = useState(false);
   const reticleRef = useRef<Mesh>(null);
   const orbitRef = useRef<OrbitControlsImpl>(null);
   const cameraRef = useRef<PerspectiveCameraImpl>(null);
@@ -29,6 +34,7 @@ const ARScene: React.FC = (): JSX.Element => {
 
   useEffect(() => {
     setARMode(isPresenting);
+    setShowPresentation(isPresenting);
   }, [isPresenting]);
 
   useHitTest((hitMatrix: Matrix4) => {
@@ -53,12 +59,18 @@ const ARScene: React.FC = (): JSX.Element => {
     <>
       <OrbitControls
         ref={orbitRef}
-        target={[0.3, 2.3, 0]}
+        target={[0.1, 0.83, 0.31]}
+        minDistance={0.1}
+        maxDistance={20}
+        minAzimuthAngle={0}
+        minPolarAngle={0}
+        maxPolarAngle={1.57}
         enablePan
         enableDamping
       />
       <CustomEnvironment />
-      {isPresenting && modelPosition && (
+      <ContactShadows smooth opacity={0.8} />
+      {showPresentation && modelPosition && (
         <ARModel position={modelPosition} key="ar-model" />
       )}
       {isPresenting && (
@@ -69,14 +81,13 @@ const ARScene: React.FC = (): JSX.Element => {
           </mesh>
         </Interactive>
       )}
-      {!isPresenting && (
+      {!showPresentation && (
         <ARModel position={new Vector3(0, 0, 0)} key="interaction-model" />
       )}
       <PerspectiveCamera
         ref={cameraRef}
         makeDefault
-        // position={[-6.81, 6.06, 10.86]}
-        position={[-6.76, 3.53, 11.47]}
+        position={[-0.62, 1.57, 4.52]}
       />
     </>
   );

@@ -8,9 +8,8 @@ import { useAppContext } from 'src/context/AppProvider';
 const BottomPanel: React.FC<{ overlayContentRef?: any }> = (
   props,
 ): JSX.Element => {
-  const { showPanels } = useAppContext();
   const { overlayContentRef } = props;
-  console.log(showPanels);
+  const { showPanels } = useAppContext();
 
   return (
     <BottomPanelWrapper $showPanels={showPanels} ref={overlayContentRef}>

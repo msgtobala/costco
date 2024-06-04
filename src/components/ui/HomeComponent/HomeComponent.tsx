@@ -10,10 +10,8 @@ import {
   HomeComponentWrapper,
 } from 'src/components/ui/HomeComponent/HomeComponent.style';
 import SplashLoader from 'src/components/ui/SplashLoader/SplashLoader';
-import { useAppContext } from 'src/context/AppProvider';
 
 const HomeComponent: React.FC = (): JSX.Element => {
-  const { selectedHotSpot } = useAppContext();
   return (
     <HomeComponentWrapper>
       <Header />
@@ -23,7 +21,19 @@ const HomeComponent: React.FC = (): JSX.Element => {
       </CanvasWrapper>
       <SidePanel />
       <BottomPanel />
-      {selectedHotSpot === 0 && (
+      {/* <div
+        style={{
+          width: '20px',
+          height: '20px',
+          position: 'absolute',
+          top: 0,
+          zIndex: 100,
+          transform: 'translate(205px, 429px)',
+        }}
+      >
+        <Highlighter />
+      </div> */}
+      {/* {selectedHotSpot === 0 && (
         <div
           style={{
             position: 'absolute',
@@ -68,7 +78,7 @@ const HomeComponent: React.FC = (): JSX.Element => {
             Certified.
           </p>
         </div>
-      )}
+      )} */}
     </HomeComponentWrapper>
   );
 };

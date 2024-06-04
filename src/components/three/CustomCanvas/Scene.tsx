@@ -1,4 +1,4 @@
-import React, { Suspense, useRef } from 'react';
+import React, { Suspense, useEffect, useRef } from 'react';
 
 import { PerspectiveCamera as PerspectiveCameraImpl } from 'three';
 import {
@@ -25,11 +25,15 @@ const Scene: React.FC = (): JSX.Element => {
 
   useHotSpot(cameraRef, orbitRef, camera);
 
+  useEffect(() => {}, []);
+
   return (
     <>
       <OrbitControls
         ref={orbitRef}
-        target={[0.13, 0.5, 0.4]}
+        target={[0.1, 0.83, 0.31]}
+        // target={[0.09, 0.84, 0.31]}
+        // target={[0.04, 0.85, 0.3]}
         // target={[0.3, 2.3, 0]}
         minDistance={0.1}
         maxDistance={20}
@@ -44,7 +48,7 @@ const Scene: React.FC = (): JSX.Element => {
       </Suspense>
       {selectedEnvironment !== null && selectedEnvironment >= 0 && (
         <Environment
-          files={environment[selectedEnvironment]}
+        files={environment[selectedEnvironment]}
           background
           ground={{
             height: 7,
@@ -58,7 +62,9 @@ const Scene: React.FC = (): JSX.Element => {
       <PerspectiveCamera
         ref={cameraRef}
         makeDefault
-        position={[-0.76, 1.36, 4.81]}
+        position={[-0.62, 1.57, 4.52]}
+        // position={[-0.77, 1.55, 4.74]}
+        // position={[0.12, 1.86, 4.76]}
         // position={[-6.76, 3.53, 11.47]}
       />
     </>

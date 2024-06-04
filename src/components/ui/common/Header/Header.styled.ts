@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 const slideInTop = keyframes`
   from {
@@ -11,7 +11,7 @@ const slideInTop = keyframes`
   }
 `;
 
-export const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.div<{ $showPanels: boolean }>`
   position: absolute;
   top: 0;
   display: flex;
@@ -20,7 +20,12 @@ export const HeaderWrapper = styled.div`
   gap: 10px;
   width: 100%;
   padding: 20px;
-  animation: ${slideInTop} 1s ease-in-out;
+  ${(props) =>
+    props.$showPanels &&
+    css`
+      animation: ${slideInTop} 1s ease-in-out;
+    `};
+  animation-delay: 0.75s;
 `;
 
 export const HeaderButton = styled.button`

@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  assetsInclude: ['**/*.gltf', '**/*.hdr'],
+  assetsInclude: ['**/*.gltf', '**/*.hdr', '**/*.exr'],
   resolve: {
     alias: {
       src: "/src",
